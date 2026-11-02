@@ -122,10 +122,10 @@
       </g>
     </g>
 
-    <!-- Center Nucleus: Spacebon AI Core -->
+    <!-- Center Nucleus: IG Drones AI Core -->
     <circle cx="0" cy="0" r="32" fill="#0E1B3B" stroke="#247BFF" stroke-width="2"/>
     <circle cx="0" cy="0" r="38" fill="none" stroke="#FF354F" stroke-width="1" stroke-dasharray="4 4"/>
-    <text x="0" y="-3" text-anchor="middle" font-family="'SF Mono', monospace" font-size="11" font-weight="900" fill="#F4F6FC">SPACEBON</text>
+    <text x="0" y="-3" text-anchor="middle" font-family="'SF Mono', monospace" font-size="11" font-weight="900" fill="#F4F6FC">IG DRONES</text>
     <text x="0" y="11" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9" font-weight="700" fill="#38BDF8">AI OS</text>
   </g>
 

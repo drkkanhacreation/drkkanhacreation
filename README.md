@@ -7,13 +7,13 @@
 
 <div align="center">
 
-![Introduction](./assets/hero.svg?v=1)
+![Introduction](./assets/hero.svg?v=4)
 
-![About Me](./assets/about-life.svg?v=1)
+![About Me](./assets/about-life.svg?v=4)
 
-![Technology Stack](./assets/stack.svg?v=1)
+![Technology Stack](./assets/stack.svg?v=4)
 
-![Digital ID](./assets/id-dashboard.svg?v=1)
+![Digital ID](./assets/id-dashboard.svg?v=4)
 
 </div>
 
@@ -21,13 +21,13 @@
 
 | Project | Description | Core Stack | Repository / Demo |
 | :--- | :--- | :--- | :--- |
-| **UK Resort Web Experience** | High-performance hospitality & resort booking web application featuring dynamic layout rendering and fluid UI. | `Next.js` `TypeScript` `TailwindCSS` | [Inspect Code](https://github.com/swadhin-afk/ukresort-nextjs) |
-| **SaaS Startup Architecture** | Scalable cloud software dashboard and startup landing architecture with modular state management. | `React.js` `Node.js` `TailwindCSS` | [Inspect Code](https://github.com/swadhin-afk/saas-startup) |
-| **Doctor Appointment System** | Complete healthcare booking and scheduling portal for patients, doctors, and real-time appointment handling. | `JavaScript` `HTML5/CSS3` `REST APIs` | [Inspect Code](https://github.com/swadhin-afk/doctor-appointment-website) |
+| **portfolio3d** | Interactive 3D Developer Portfolio web experience featuring immersive three-dimensional spatial design. | `JavaScript` `Three.js` `WebGL` | [Inspect Code](https://github.com/drkkanhacreation/portfolio3d) |
+| **sakala-bhajana** | Sakala Ra Dhupa — Nostalgic 1990s Sunday morning Odia devotional web cultural experience. | `JavaScript` `HTML5/CSS3` `Web Audio` | [Inspect Code](https://github.com/drkkanhacreation/sakala-bhajana) |
+| **Coding Samurai Internship Task** | Android & Web engineering repository featuring real-world tasks and modern implementations. | `JavaScript` `Android` `REST APIs` | [Inspect Code](https://github.com/drkkanhacreation/CODING-SAMURAI-INTERNSHIP-TASK) |
 
 <div align="center">
 
-![Connect](./assets/connect.svg?v=1)
+![Connect](./assets/connect.svg?v=4)
 
 ### 🤝 Connect with Swadhinjit
 
@@ -50,8 +50,8 @@
 </p>
 
 <p align="center">
-  <sub>"Bridging intelligent software and autonomous hardware at Spacebon."</sub><br/>
-  <sub>© 2026 Swadhinjit Sahoo · ID DRONE</sub>
+  <sub>"Bridging intelligent software and autonomous hardware at IG Drones."</sub><br/>
+  <sub>© 2026 Swadhinjit Sahoo · IG Drones Autonomous Systems</sub>
 </p>
 
 </div>
