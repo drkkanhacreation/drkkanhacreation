@@ -420,7 +420,6 @@
       <line x1="195" y1="74" x2="395" y2="74" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="4 3"/>
       <circle cx="205" cy="74" r="1.5" fill="#38BDF8" opacity="0.8"/>
       <circle cx="390" cy="74" r="1.5" fill="#38BDF8" opacity="0.8"/>
-      <text x="390" y="69" text-anchor="end" font-family="'SF Mono', monospace" font-size="6" font-weight="800" fill="#38BDF8" letter-spacing="0.5">AUTONOMOUS PATROL ZONE</text>
 
       <!-- ================= ADVANCED 3D AUTONOMOUS BIPEDAL ROBOT ================= -->
       <g id="autonomous-biped-robot" transform="translate(0, 44)">
