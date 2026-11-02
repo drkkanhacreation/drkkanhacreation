@@ -22,6 +22,21 @@
     <clipPath id="hero-portrait-clip">
       <rect x="0" y="0" width="260" height="290" rx="18"/>
     </clipPath>
+  
+    <!-- Drone Shading Gradients -->
+    <linearGradient id="drone-canopy-metal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="25%" stop-color="#1E293B"/>
+      <stop offset="75%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+
+    <radialGradient id="drone-lens-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#1D4ED8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#080F1E" stop-opacity="0"/>
+    </radialGradient>
+
   </defs>
 
   <style>
@@ -78,6 +93,58 @@
     .h-role-2 { animation: hero-role-cycle-2 12s infinite; }
     .h-role-3 { animation: hero-role-cycle-3 12s infinite; }
     .h-role-4 { animation: hero-role-cycle-4 12s infinite; }
+
+    
+    /* Drone Flight Hover and Banking */
+    @keyframes drone-flight-hover {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      25%      { transform: translateY(-5px) rotate(1.5deg); }
+      50%      { transform: translateY(-2px) rotate(-0.8deg); }
+      75%      { transform: translateY(-6.5px) rotate(-1.4deg); }
+    }
+    .drone-hover-anim {
+      transform-origin: 0px 0px;
+      animation: drone-flight-hover 4.2s ease-in-out infinite;
+    }
+
+    /* Drone Ground Shadow Tracking Altitude */
+    @keyframes drone-shadow-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.35; }
+      25%      { transform: scale(0.88); opacity: 0.22; }
+      50%      { transform: scale(0.95); opacity: 0.3; }
+      75%      { transform: scale(0.84); opacity: 0.18; }
+    }
+    .drone-shadow-anim {
+      transform-origin: 0px 55px;
+      animation: drone-shadow-pulse 4.2s ease-in-out infinite;
+    }
+
+    /* Propeller Continuous High-Speed Rotation */
+    @keyframes prop-spin-clockwise {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    @keyframes prop-spin-counter {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(-360deg); }
+    }
+    .prop-spin-cw {
+      transform-origin: 0px -4px;
+      animation: prop-spin-clockwise 0.14s linear infinite;
+    }
+    .prop-spin-ccw {
+      transform-origin: 0px -4px;
+      animation: prop-spin-counter 0.14s linear infinite;
+    }
+
+    /* Navigation Strobe Beacon */
+    @keyframes drone-nav-strobe {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0.25; }
+    }
+    .drone-led-pulse {
+      animation: drone-nav-strobe 1s ease-in-out infinite;
+    }
 
     @media (prefers-reduced-motion: reduce) {
       .h-role-1, .h-role-2, .h-role-3, .h-role-4 { animation: none !important; }
@@ -174,6 +241,124 @@
       <g transform="translate(410, 0)">
         <rect x="0" y="0" width="125" height="32" rx="8" fill="#10224A" stroke="#38BDF8" stroke-opacity="0.35" stroke-width="1"/>
         <text x="12" y="20" font-family="'SF Mono', monospace" font-size="11" font-weight="700" fill="#38BDF8">🆔 ID: IG063</text>
+      </g>
+    </g>
+  </g>
+
+  
+  <!-- ================= 3D AUTONOMOUS QUADCOPTER DRONE (AEROSPACE PATROL) ================= -->
+  <g id="autonomous-drone" transform="translate(535, 120)">
+    <!-- Soft Ground / Altitude Projection Shadow -->
+    <ellipse cx="0" cy="62" rx="36" ry="6.5" fill="#020617" opacity="0.35" class="drone-shadow-anim"/>
+
+    <!-- Drone Levitation and 3D Banking Group -->
+    <g class="drone-hover-anim">
+      <!-- Mini Avionics Status Telemetry Badge -->
+      <g transform="translate(0, -36)">
+        <rect x="-44" y="-8" width="88" height="15" rx="3.5" fill="#0A1428" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="0.8"/>
+        <circle cx="-35" cy="-0.5" r="2" fill="#10B981" class="drone-led-pulse"/>
+        <text x="-28" y="2.5" font-family="'SF Mono', monospace" font-size="6.5" font-weight="800" fill="#38BDF8" letter-spacing="0.5">UAV // IG-063</text>
+      </g>
+
+      <!-- Carbon Landing Gear / Skids -->
+      <!-- Left Skid Leg -->
+      <path d="M -15 12 L -22 26 L -32 26 M -22 26 L -8 26" fill="none" stroke="#334155" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Right Skid Leg -->
+      <path d="M 15 12 L 22 26 L 32 26 M 22 26 L 8 26" fill="none" stroke="#334155" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- 4 Cylindrical Carbon Fiber Arms (Layered Depth) -->
+      <!-- Rear Left Arm -->
+      <line x1="0" y1="0" x2="-44" y2="-16" stroke="#1E293B" stroke-width="4.5" stroke-linecap="round"/>
+      <line x1="0" y1="-0.5" x2="-44" y2="-16.5" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- Rear Right Arm -->
+      <line x1="0" y1="0" x2="44" y2="-16" stroke="#1E293B" stroke-width="4.5" stroke-linecap="round"/>
+      <line x1="0" y1="-0.5" x2="44" y2="-16.5" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- Front Left Arm -->
+      <line x1="0" y1="4" x2="-48" y2="14" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+      <line x1="0" y1="3" x2="-48" y2="13" stroke="#38BDF8" stroke-opacity="0.5" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- Front Right Arm -->
+      <line x1="0" y1="4" x2="48" y2="14" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+      <line x1="0" y1="3" x2="48" y2="13" stroke="#38BDF8" stroke-opacity="0.5" stroke-width="1.2" stroke-linecap="round"/>
+
+      <!-- 4 Brushless Motor Pods and Spinning Rotor Discs -->
+      <!-- Rear Left Motor -->
+      <g transform="translate(-44, -16)">
+        <ellipse cx="0" cy="0" rx="5" ry="3" fill="#334155"/>
+        <rect x="-5" y="-4" width="10" height="4" rx="1" fill="#1E293B"/>
+        <!-- Translucent Rotor Motion Blur Disc -->
+        <ellipse cx="0" cy="-4" rx="22" ry="7" fill="#38BDF8" fill-opacity="0.18" stroke="#38BDF8" stroke-opacity="0.35" stroke-width="0.8"/>
+        <!-- High-Speed Continuous Propeller Spin -->
+        <g class="prop-spin-cw">
+          <line x1="-20" y1="-4" x2="20" y2="-4" stroke="#E2E8F0" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+        </g>
+        <circle cx="0" cy="-4" r="1.5" fill="#0EA5E9"/>
+      </g>
+
+      <!-- Rear Right Motor -->
+      <g transform="translate(44, -16)">
+        <ellipse cx="0" cy="0" rx="5" ry="3" fill="#334155"/>
+        <rect x="-5" y="-4" width="10" height="4" rx="1" fill="#1E293B"/>
+        <!-- Translucent Rotor Motion Blur Disc -->
+        <ellipse cx="0" cy="-4" rx="22" ry="7" fill="#38BDF8" fill-opacity="0.18" stroke="#38BDF8" stroke-opacity="0.35" stroke-width="0.8"/>
+        <!-- High-Speed Continuous Propeller Spin -->
+        <g class="prop-spin-ccw">
+          <line x1="-20" y1="-4" x2="20" y2="-4" stroke="#E2E8F0" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+        </g>
+        <circle cx="0" cy="-4" r="1.5" fill="#0EA5E9"/>
+      </g>
+
+      <!-- Central Monocoque Fuselage Pod (Metallic Dark-Gray and Cyan) -->
+      <!-- Lower Belly Shield -->
+      <path d="M -18 2 L -14 14 L 0 17 L 14 14 L 18 2 Z" fill="#091122" stroke="#1E293B" stroke-width="1"/>
+      <!-- Aerodynamic Canopy -->
+      <path d="M 0 -12 C 14 -12 22 -4 20 6 C 18 12 10 15 0 15 C -10 15 -18 12 -20 6 C -22 -4 -14 -12 0 -12 Z" fill="url(#drone-canopy-metal)" stroke="#38BDF8" stroke-width="1.2"/>
+      <!-- Specular Bevel Ridge Highlight -->
+      <path d="M -12 -3 Q 0 -8 12 -3" fill="none" stroke="#BAE6FD" stroke-width="1" stroke-linecap="round" opacity="0.75"/>
+      <!-- Red Center Flight Stripe -->
+      <line x1="0" y1="-10" x2="0" y2="10" stroke="#FF354F" stroke-width="1.4" stroke-linecap="round"/>
+
+      <!-- GPS Dome / RTK Position Module -->
+      <circle cx="0" cy="-2" r="3.5" fill="#1E293B" stroke="#38BDF8" stroke-width="0.8"/>
+      <circle cx="0" cy="-2" r="1.5" fill="#38BDF8"/>
+
+      <!-- Forward 3-Axis Stabilized Gimbal 4K Camera -->
+      <g transform="translate(0, 16)">
+        <rect x="-4" y="0" width="8" height="4" rx="1" fill="#334155"/>
+        <circle cx="0" cy="5" r="4.5" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
+        <!-- Optical Lens Glass with Reflection Glint -->
+        <circle cx="0" cy="5" r="2.8" fill="#1D4ED8"/>
+        <circle cx="-0.8" cy="4.2" r="1" fill="#FFFFFF" opacity="0.8"/>
+        <circle cx="0" cy="5" r="2.8" fill="none" stroke="#38BDF8" stroke-width="0.5" stroke-dasharray="1 1"/>
+      </g>
+
+      <!-- Front Left Motor -->
+      <g transform="translate(-48, 14)">
+        <ellipse cx="0" cy="0" rx="5.5" ry="3.5" fill="#334155"/>
+        <rect x="-5.5" y="-4" width="11" height="4.5" rx="1" fill="#0F172A"/>
+        <!-- Rotor Wash Disc -->
+        <ellipse cx="0" cy="-4" rx="25" ry="8" fill="#38BDF8" fill-opacity="0.22" stroke="#38BDF8" stroke-opacity="0.45" stroke-width="0.9"/>
+        <!-- High-Speed Continuous Propeller Spin -->
+        <g class="prop-spin-ccw">
+          <line x1="-23" y1="-4" x2="23" y2="-4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/>
+        </g>
+        <circle cx="0" cy="-4" r="1.8" fill="#38BDF8"/>
+        <!-- Aviation Navigation Strobe: Port Red -->
+        <circle cx="-5" cy="1" r="1.5" fill="#FF354F" class="drone-led-pulse"/>
+      </g>
+
+      <!-- Front Right Motor -->
+      <g transform="translate(48, 14)">
+        <ellipse cx="0" cy="0" rx="5.5" ry="3.5" fill="#334155"/>
+        <rect x="-5.5" y="-4" width="11" height="4.5" rx="1" fill="#0F172A"/>
+        <!-- Rotor Wash Disc -->
+        <ellipse cx="0" cy="-4" rx="25" ry="8" fill="#38BDF8" fill-opacity="0.22" stroke="#38BDF8" stroke-opacity="0.45" stroke-width="0.9"/>
+        <!-- High-Speed Continuous Propeller Spin -->
+        <g class="prop-spin-cw">
+          <line x1="-23" y1="-4" x2="23" y2="-4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/>
+        </g>
+        <circle cx="0" cy="-4" r="1.8" fill="#38BDF8"/>
+        <!-- Aviation Navigation Strobe: Starboard Green -->
+        <circle cx="5" cy="1" r="1.5" fill="#10B981" class="drone-led-pulse"/>
       </g>
     </g>
   </g>

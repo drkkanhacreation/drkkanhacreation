@@ -7,13 +7,13 @@
 
 <div align="center">
 
-![Introduction](./assets/hero.svg?v=12)
+![Introduction](./assets/hero.svg?v=13)
 
-![About Me](./assets/about-life.svg?v=12)
+![About Me](./assets/about-life.svg?v=13)
 
-![Technology Stack](./assets/stack.svg?v=12)
+![Technology Stack](./assets/stack.svg?v=13)
 
-![Digital ID](./assets/id-dashboard.svg?v=12)
+![Digital ID](./assets/id-dashboard.svg?v=13)
 
 </div>
 
@@ -27,7 +27,7 @@
 
 <div align="center">
 
-![Connect](./assets/connect.svg?v=12)
+![Connect](./assets/connect.svg?v=13)
 
 ### 🤝 Connect with Swadhinjit
 

@@ -26,6 +26,21 @@
     <clipPath id="about-mini-clip">
       <rect x="0" y="0" width="115" height="135" rx="10"/>
     </clipPath>
+  
+    <!-- Walking Robot Metallic Gradients -->
+    <linearGradient id="robot-chassis-metal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="30%" stop-color="#1E293B"/>
+      <stop offset="70%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+
+    <linearGradient id="headlight-beam" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#38BDF8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+
   </defs>
 
         <style>
@@ -74,6 +89,82 @@
     .prog-1 { animation: bar-prog-1 12s infinite; }
     .prog-2 { animation: bar-prog-2 12s infinite; }
     .prog-3 { animation: bar-prog-3 12s infinite; }
+
+    
+    /* ================= 3D WALKING ROBOT TROT GAIT ================= */
+    /* Diagonal Pair 1: Front-Right and Rear-Left */
+    @keyframes leg-swing-pair-1 {
+      0%   { transform: rotate(-12deg); }
+      25%  { transform: rotate(0deg); }
+      50%  { transform: rotate(12deg); }
+      75%  { transform: rotate(2deg); }
+      100% { transform: rotate(-12deg); }
+    }
+
+    /* Diagonal Pair 2: Front-Left and Rear-Right (180 deg out of phase) */
+    @keyframes leg-swing-pair-2 {
+      0%   { transform: rotate(12deg); }
+      25%  { transform: rotate(2deg); }
+      50%  { transform: rotate(-12deg); }
+      75%  { transform: rotate(0deg); }
+      100% { transform: rotate(12deg); }
+    }
+
+    .leg-fr-anim {
+      transform-origin: 0px 0px;
+      animation: leg-swing-pair-1 1.6s ease-in-out infinite;
+    }
+    .leg-rl-anim {
+      transform-origin: 0px 0px;
+      animation: leg-swing-pair-1 1.6s ease-in-out infinite;
+    }
+
+    .leg-fl-anim {
+      transform-origin: 0px 0px;
+      animation: leg-swing-pair-2 1.6s ease-in-out infinite;
+    }
+    .leg-rr-anim {
+      transform-origin: 0px 0px;
+      animation: leg-swing-pair-2 1.6s ease-in-out infinite;
+    }
+
+    /* Robot Monocoque Body Walking Heave and Pitch */
+    @keyframes robot-walk-heave {
+      0%, 50%, 100% { transform: translateY(0px) rotate(0deg); }
+      25%           { transform: translateY(-2px) rotate(0.6deg); }
+      75%           { transform: translateY(-2px) rotate(-0.6deg); }
+    }
+    .robot-body-anim {
+      transform-origin: 0px 4px;
+      animation: robot-walk-heave 1.6s ease-in-out infinite;
+    }
+
+    /* LIDAR Sensor Sweep Pulse */
+    @keyframes robot-lidar-sweep {
+      0%, 100% { opacity: 0.4; }
+      50%      { opacity: 1; }
+    }
+    .robot-lidar-pulse {
+      animation: robot-lidar-sweep 0.7s ease-in-out infinite;
+    }
+
+    /* Feet Contact Shadows Stance vs Swing */
+    @keyframes foot-shadow-1 {
+      0%, 100% { transform: scale(0.75); opacity: 0.15; }
+      50%      { transform: scale(1.15); opacity: 0.5; }
+    }
+    @keyframes foot-shadow-2 {
+      0%, 100% { transform: scale(1.15); opacity: 0.5; }
+      50%      { transform: scale(0.75); opacity: 0.15; }
+    }
+    .r-shadow-p1 {
+      transform-origin: center;
+      animation: foot-shadow-1 1.6s ease-in-out infinite;
+    }
+    .r-shadow-p2 {
+      transform-origin: center;
+      animation: foot-shadow-2 1.6s ease-in-out infinite;
+    }
 
     @media (prefers-reduced-motion: reduce) {
       .ab-slide-1, .ab-slide-2, .ab-slide-3, .prog-1, .prog-2, .prog-3 { animation: none !important; }
@@ -254,6 +345,122 @@
       <text x="0" y="18" font-family="'SF Mono', monospace" font-size="9" font-weight="700" fill="#93C5FD" letter-spacing="1">MAKE THE NEXT MOVE.</text>
       <text x="0" y="40" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="900" fill="#F4F6FC">Autonomous Systems &amp; Aerial Engineering</text>
       <text x="0" y="58" font-family="-apple-system, sans-serif" font-size="11" fill="#93C5FD">A clearer vision. A stronger autonomous stack.</text>
+    
+      <!-- ================= 3D AUTONOMOUS WALKING QUADRUPED ROBOT ================= -->
+      <g id="autonomous-quadruped-robot" transform="translate(325, 38)">
+        <!-- Nav Waypoint Track and Ground Floor Line -->
+        <line x1="-42" y1="30" x2="48" y2="30" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="3 3"/>
+        <circle cx="-36" cy="30" r="1.2" fill="#38BDF8" opacity="0.6"/>
+        <circle cx="42" cy="30" r="1.2" fill="#38BDF8" opacity="0.6"/>
+
+        <!-- Soft Foot Contact Shadows -->
+        <ellipse cx="-22" cy="30" rx="4" ry="1.5" fill="#020617" class="r-shadow-p1"/>
+        <ellipse cx="-10" cy="30" rx="4" ry="1.5" fill="#020617" class="r-shadow-p2"/>
+        <ellipse cx="12" cy="30" rx="4" ry="1.5" fill="#020617" class="r-shadow-p2"/>
+        <ellipse cx="24" cy="30" rx="4" ry="1.5" fill="#020617" class="r-shadow-p1"/>
+
+        <!-- Ambient Ground Wash under Robot -->
+        <ellipse cx="0" cy="30" rx="28" ry="4" fill="#080F1E" opacity="0.45"/>
+
+        <!-- ================= BACKGROUND LEGS (FL, RL) ================= -->
+        <!-- Rear-Left Leg (Background, Diagonal Pair 1) -->
+        <g transform="translate(-20, 6)" class="leg-rl-anim">
+          <circle cx="0" cy="0" r="3.8" fill="#0F172A" stroke="#1E293B" stroke-width="0.8"/>
+          <!-- Upper Leg (Thigh) -->
+          <line x1="0" y1="0" x2="-7" y2="12" stroke="#1E293B" stroke-width="2.6" stroke-linecap="round"/>
+          <!-- Knee Joint -->
+          <circle cx="-7" cy="12" r="2.4" fill="#0F172A" stroke="#334155" stroke-width="0.6"/>
+          <!-- Lower Leg (Shin) -->
+          <line x1="-7" y1="12" x2="-2" y2="24" stroke="#334155" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- Foot pad -->
+          <circle cx="-2" cy="24" r="1.8" fill="#020617"/>
+        </g>
+
+        <!-- Front-Left Leg (Background, Diagonal Pair 2) -->
+        <g transform="translate(16, 6)" class="leg-fl-anim">
+          <circle cx="0" cy="0" r="3.8" fill="#0F172A" stroke="#1E293B" stroke-width="0.8"/>
+          <!-- Upper Leg (Thigh) -->
+          <line x1="0" y1="0" x2="7" y2="12" stroke="#1E293B" stroke-width="2.6" stroke-linecap="round"/>
+          <!-- Knee Joint -->
+          <circle cx="7" cy="12" r="2.4" fill="#0F172A" stroke="#334155" stroke-width="0.6"/>
+          <!-- Lower Leg (Shin) -->
+          <line x1="7" y1="12" x2="12" y2="24" stroke="#334155" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- Foot pad -->
+          <circle cx="12" cy="24" r="1.8" fill="#020617"/>
+        </g>
+
+        <!-- ================= MAIN ROBOT CHASSIS / MONOCOQUE (With Walk Heave) ================= -->
+        <g class="robot-body-anim">
+          <!-- Main Industrial Chassis (Hexagonal Faceted Monocoque) -->
+          <path d="M -26 2 L -20 -7 L 18 -7 L 27 -2 L 25 8 L 18 11 L -20 11 L -26 7 Z" fill="url(#robot-chassis-metal)" stroke="#38BDF8" stroke-width="1"/>
+
+          <!-- Chassis Armor Plate Bevel Details -->
+          <path d="M -18 -5 L 14 -5 L 21 -1 L 14 8 L -18 8 Z" fill="#0F172A" stroke="#1E293B" stroke-width="0.8"/>
+
+          <!-- Top Utility Payload Rail / Roll Bar -->
+          <path d="M -14 -7 L -14 -10 L 12 -10 L 12 -7" fill="none" stroke="#475569" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- Side Telemetry Status LED Strip -->
+          <line x1="-12" y1="2" x2="4" y2="2" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="8" y1="2" x2="11" y2="2" stroke="#10B981" stroke-width="1.4" stroke-linecap="round"/>
+
+          <!-- Technical Unit Label -->
+          <text x="-6" y="6.5" font-family="'SF Mono', monospace" font-size="4.5" font-weight="900" fill="#93C5FD" letter-spacing="0.6">AGV-04</text>
+
+          <!-- Multispectral Perception Head / Sensor Turret (Front) -->
+          <g transform="translate(25, -2)">
+            <!-- Turret Housing -->
+            <path d="M 0 -3 L 6 -2 L 6 3 L 0 5 Z" fill="#0A1428" stroke="#38BDF8" stroke-width="0.8"/>
+            <!-- 360 LIDAR Sensor Puck -->
+            <rect x="1" y="-6.5" width="5" height="3.5" rx="0.8" fill="#0F172A" stroke="#38BDF8" stroke-width="0.7"/>
+            <line x1="1.5" y1="-4.8" x2="5" y2="-4.8" stroke="#38BDF8" stroke-width="0.8" class="robot-lidar-pulse"/>
+
+            <!-- Primary Optical Camera Eye -->
+            <circle cx="5" cy="0.5" r="1.8" fill="#1E40AF" stroke="#38BDF8" stroke-width="0.5"/>
+            <circle cx="5" cy="0.5" r="0.8" fill="#FFFFFF"/>
+
+            <!-- Front LED Headlight Illuminator -->
+            <circle cx="3" cy="3" r="1" fill="#38BDF8"/>
+            <!-- Forward Projection Light Cone -->
+            <polygon points="5,3 24,10 22,18 5,4" fill="url(#headlight-beam)" opacity="0.4"/>
+          </g>
+        </g>
+
+        <!-- ================= FOREGROUND LEGS (FR, RR) ================= -->
+        <!-- Rear-Right Leg (Foreground, Diagonal Pair 2) -->
+        <g transform="translate(-15, 7)" class="leg-rr-anim">
+          <!-- Hip Actuator Housing -->
+          <circle cx="0" cy="0" r="4.4" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+          <circle cx="0" cy="0" r="1.8" fill="#0EA5E9"/>
+          <!-- Upper Leg (Thigh) -->
+          <line x1="0" y1="0" x2="-9" y2="13" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-9" y2="13" stroke="#64748B" stroke-width="0.8" stroke-linecap="round"/>
+          <!-- Knee Pivot Joint -->
+          <circle cx="-9" cy="13" r="2.8" fill="#0F172A" stroke="#38BDF8" stroke-width="0.8"/>
+          <circle cx="-9" cy="13" r="1" fill="#FF354F"/>
+          <!-- Lower Leg (Shin) and Damper Strut -->
+          <line x1="-9" y1="13" x2="-3" y2="24" stroke="#475569" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- Rubber Traction Foot Pad -->
+          <circle cx="-3" cy="24" r="2.2" fill="#0F172A" stroke="#38BDF8" stroke-width="0.7"/>
+        </g>
+
+        <!-- Front-Right Leg (Foreground, Diagonal Pair 1) -->
+        <g transform="translate(20, 7)" class="leg-fr-anim">
+          <!-- Hip Actuator Housing -->
+          <circle cx="0" cy="0" r="4.4" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+          <circle cx="0" cy="0" r="1.8" fill="#0EA5E9"/>
+          <!-- Upper Leg (Thigh) -->
+          <line x1="0" y1="0" x2="5" y2="13" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="5" y2="13" stroke="#64748B" stroke-width="0.8" stroke-linecap="round"/>
+          <!-- Knee Pivot Joint -->
+          <circle cx="5" cy="13" r="2.8" fill="#0F172A" stroke="#38BDF8" stroke-width="0.8"/>
+          <circle cx="5" cy="13" r="1" fill="#10B981"/>
+          <!-- Lower Leg (Shin) and Damper Strut -->
+          <line x1="5" y1="13" x2="10" y2="24" stroke="#475569" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- Rubber Traction Foot Pad -->
+          <circle cx="10" cy="24" r="2.2" fill="#0F172A" stroke="#38BDF8" stroke-width="0.7"/>
+        </g>
+      </g>
     </g>
   </g>
 </svg>
