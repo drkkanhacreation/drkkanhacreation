@@ -1,30 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="100%" height="100%">
   <defs>
     <linearGradient id="stack-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070B16"/>
-      <stop offset="50%" stop-color="#0A1329"/>
-      <stop offset="100%" stop-color="#070B16"/>
+      <stop offset="0%" stop-color="#0B1938"/>
+      <stop offset="50%" stop-color="#132758"/>
+      <stop offset="100%" stop-color="#0B1938"/>
     </linearGradient>
 
     <linearGradient id="stack-border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#247BFF" stop-opacity="0.8"/>
-      <stop offset="50%" stop-color="#FF354F" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#247BFF" stop-opacity="0.8"/>
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#FF354F" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#247BFF" stop-opacity="0.85"/>
     </linearGradient>
 
     <linearGradient id="stack-orbit-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#247BFF" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#247BFF" stop-opacity="0.1"/>
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.15"/>
     </linearGradient>
 
     <linearGradient id="stack-orbit-grad2" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FF354F" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#FF354F" stop-opacity="0.1"/>
+      <stop offset="0%" stop-color="#FF354F" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#FF354F" stop-opacity="0.15"/>
     </linearGradient>
 
     <linearGradient id="stack-orbit-grad3" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.1"/>
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0.15"/>
     </linearGradient>
   </defs>
 
@@ -55,34 +55,34 @@
 
   <!-- Background Card -->
   <rect x="10" y="10" width="940" height="400" rx="24" fill="url(#stack-bg)"/>
-  <rect x="10" y="10" width="940" height="400" rx="24" fill="none" stroke="url(#stack-border)" stroke-width="1.5"/>
+  <rect x="10" y="10" width="940" height="400" rx="24" fill="none" stroke="url(#stack-border)" stroke-width="1.8"/>
 
   <!-- Header -->
   <g transform="translate(50, 42)">
-    <text x="0" y="14" font-family="'SF Mono', Consolas, monospace" font-size="12" font-weight="700" fill="#247BFF" letter-spacing="1.5">STACK &amp; ARSENAL // ORBITAL MATRIX</text>
+    <text x="0" y="14" font-family="'SF Mono', Consolas, monospace" font-size="12" font-weight="700" fill="#38BDF8" letter-spacing="1.5">STACK &amp; ARSENAL // ORBITAL MATRIX</text>
     <text x="0" y="42" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="800" fill="#F4F6FC">Full-Stack &amp; Autonomous AI Stack</text>
   </g>
 
   <!-- 3 TILTED ELLIPTICAL ORBITS (CENTERED AT 480, 235) -->
   <g transform="translate(480, 235)">
-    <!-- Orbit 1: Outer Robotics & Autonomous (tilted -25 deg) -->
+    <!-- Orbit 1: Outer Robotics & Autonomous (tilted -20 deg) -->
     <g transform="rotate(-20)">
       <ellipse cx="0" cy="0" rx="360" ry="110" stroke="url(#stack-orbit-grad1)" stroke-width="1.5" class="orbit-ring"/>
       <!-- Orbit 1 Tech Nodes -->
       <g transform="translate(-320, -35)" class="float-slow">
-        <rect x="-42" y="-16" width="84" height="32" rx="16" fill="#0C152B" stroke="#247BFF" stroke-width="1.5"/>
+        <rect x="-42" y="-16" width="84" height="32" rx="16" fill="#10224A" stroke="#38BDF8" stroke-width="1.5"/>
         <text x="0" y="5" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#38BDF8">🤖 ROS</text>
       </g>
       <g transform="translate(320, 35)" class="float-fast">
-        <rect x="-46" y="-16" width="92" height="32" rx="16" fill="#0C152B" stroke="#247BFF" stroke-width="1.5"/>
+        <rect x="-46" y="-16" width="92" height="32" rx="16" fill="#10224A" stroke="#38BDF8" stroke-width="1.5"/>
         <text x="0" y="5" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#38BDF8">🛸 OpenCV</text>
       </g>
       <g transform="translate(0, -110)" class="float-slow">
-        <rect x="-48" y="-16" width="96" height="32" rx="16" fill="#0C152B" stroke="#247BFF" stroke-width="1.5"/>
+        <rect x="-48" y="-16" width="96" height="32" rx="16" fill="#10224A" stroke="#38BDF8" stroke-width="1.5"/>
         <text x="0" y="5" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#38BDF8">🧠 PyTorch</text>
       </g>
       <g transform="translate(0, 110)" class="float-fast">
-        <rect x="-44" y="-16" width="88" height="32" rx="16" fill="#0C152B" stroke="#247BFF" stroke-width="1.5"/>
+        <rect x="-44" y="-16" width="88" height="32" rx="16" fill="#10224A" stroke="#38BDF8" stroke-width="1.5"/>
         <text x="0" y="5" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#38BDF8">⚡ C++</text>
       </g>
     </g>
@@ -92,19 +92,19 @@
       <ellipse cx="0" cy="0" rx="270" ry="85" stroke="url(#stack-orbit-grad2)" stroke-width="1.5" class="orbit-ring" style="animation-duration: 20s; animation-direction: reverse;"/>
       <!-- Orbit 2 Tech Nodes -->
       <g transform="translate(-230, 25)" class="float-fast">
-        <rect x="-48" y="-16" width="96" height="32" rx="16" fill="#1C0D17" stroke="#FF354F" stroke-width="1.5"/>
+        <rect x="-48" y="-16" width="96" height="32" rx="16" fill="#20152E" stroke="#FF354F" stroke-width="1.5"/>
         <text x="0" y="5" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#FF708F">⚛️ React</text>
       </g>
       <g transform="translate(230, -25)" class="float-slow">
-        <rect x="-52" y="-16" width="104" height="32" rx="16" fill="#1C0D17" stroke="#FF354F" stroke-width="1.5"/>
+        <rect x="-52" y="-16" width="104" height="32" rx="16" fill="#20152E" stroke="#FF354F" stroke-width="1.5"/>
         <text x="0" y="5" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#FF708F">▲ Next.js</text>
       </g>
       <g transform="translate(-80, -80)" class="float-slow">
-        <rect x="-44" y="-16" width="88" height="32" rx="16" fill="#1C0D17" stroke="#FF354F" stroke-width="1.5"/>
+        <rect x="-44" y="-16" width="88" height="32" rx="16" fill="#20152E" stroke="#FF354F" stroke-width="1.5"/>
         <text x="0" y="5" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#FF708F">TS / JS</text>
       </g>
       <g transform="translate(80, 80)" class="float-fast">
-        <rect x="-48" y="-16" width="96" height="32" rx="16" fill="#1C0D17" stroke="#FF354F" stroke-width="1.5"/>
+        <rect x="-48" y="-16" width="96" height="32" rx="16" fill="#20152E" stroke="#FF354F" stroke-width="1.5"/>
         <text x="0" y="5" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#FF708F">🐋 Docker</text>
       </g>
     </g>
@@ -113,28 +113,28 @@
     <g transform="rotate(-50)">
       <ellipse cx="0" cy="0" rx="170" ry="60" stroke="url(#stack-orbit-grad3)" stroke-width="1.5" class="orbit-ring" style="animation-duration: 15s;"/>
       <g transform="translate(-140, 0)" class="float-slow">
-        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#0C1B33" stroke="#38BDF8" stroke-width="1.2"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#0E2344" stroke="#38BDF8" stroke-width="1.2"/>
         <text x="0" y="4" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#F4F6FC">🍃 MongoDB</text>
       </g>
       <g transform="translate(140, 0)" class="float-fast">
-        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#0C1B33" stroke="#38BDF8" stroke-width="1.2"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#0E2344" stroke="#38BDF8" stroke-width="1.2"/>
         <text x="0" y="4" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#F4F6FC">🐍 Python</text>
       </g>
     </g>
 
-    <!-- Center Nucleus: IG Drones AI Core -->
-    <circle cx="0" cy="0" r="32" fill="#0E1B3B" stroke="#247BFF" stroke-width="2"/>
+    <!-- Center Nucleus: IG Drones Flight AI Core -->
+    <circle cx="0" cy="0" r="32" fill="#12244E" stroke="#38BDF8" stroke-width="2"/>
     <circle cx="0" cy="0" r="38" fill="none" stroke="#FF354F" stroke-width="1" stroke-dasharray="4 4"/>
     <text x="0" y="-3" text-anchor="middle" font-family="'SF Mono', monospace" font-size="11" font-weight="900" fill="#F4F6FC">IG DRONES</text>
-    <text x="0" y="11" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9" font-weight="700" fill="#38BDF8">AI OS</text>
+    <text x="0" y="11" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9" font-weight="700" fill="#38BDF8">FLIGHT AI</text>
   </g>
 
   <!-- Bottom Grouped Stack Pills -->
   <g transform="translate(50, 365)">
-    <text x="0" y="15" font-family="'SF Mono', monospace" font-size="11" font-weight="700" fill="#8B9BB4">ROBOTICS &amp; AI:</text>
+    <text x="0" y="15" font-family="'SF Mono', monospace" font-size="11" font-weight="700" fill="#93C5FD">ROBOTICS &amp; AI:</text>
     <text x="110" y="15" font-family="-apple-system, sans-serif" font-size="11" fill="#38BDF8">ROS · OpenCV · PyTorch · C++ · Python · Embedded</text>
 
-    <text x="470" y="15" font-family="'SF Mono', monospace" font-size="11" font-weight="700" fill="#8B9BB4">WEB &amp; CLOUD:</text>
+    <text x="470" y="15" font-family="'SF Mono', monospace" font-size="11" font-weight="700" fill="#93C5FD">WEB &amp; CLOUD:</text>
     <text x="565" y="15" font-family="-apple-system, sans-serif" font-size="11" fill="#FF708F">React · Next.js · Node.js · TypeScript · Tailwind · Docker · MongoDB</text>
   </g>
 </svg>

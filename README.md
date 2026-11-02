@@ -2,18 +2,19 @@
 ===================================================================
   SWADHINJIT SAHOO — PREMIUM ANIMATED GITHUB PROFILE
   Built following the Grow with Udit Profile Playbook Specification
+  Theme: Rich Midnight Blue & Space Sapphire
 ===================================================================
 -->
 
 <div align="center">
 
-![Introduction](./assets/hero.svg?v=5)
+![Introduction](./assets/hero.svg?v=6)
 
-![About Me](./assets/about-life.svg?v=5)
+![About Me](./assets/about-life.svg?v=6)
 
-![Technology Stack](./assets/stack.svg?v=5)
+![Technology Stack](./assets/stack.svg?v=6)
 
-![Digital ID](./assets/id-dashboard.svg?v=5)
+![Digital ID](./assets/id-dashboard.svg?v=6)
 
 </div>
 
@@ -21,13 +22,13 @@
 
 | Project | Description | Core Stack | Repository / Demo |
 | :--- | :--- | :--- | :--- |
-| **UK Resort Web Experience** | High-performance hospitality & resort booking web application featuring dynamic layout rendering and fluid UI. | `Next.js` `TypeScript` `TailwindCSS` | [Inspect Code](https://github.com/swadhin-afk/ukresort-nextjs) |
-| **SaaS Startup Architecture** | Scalable cloud software dashboard and startup landing architecture with modular state management. | `React.js` `Node.js` `TailwindCSS` | [Inspect Code](https://github.com/swadhin-afk/saas-startup) |
-| **Doctor Appointment System** | Complete healthcare booking and scheduling portal for patients, doctors, and real-time appointment handling. | `JavaScript` `HTML5/CSS3` `REST APIs` | [Inspect Code](https://github.com/swadhin-afk/doctor-appointment-website) |
+| **portfolio3d** | Interactive 3D Developer Portfolio web experience featuring immersive three-dimensional spatial design. | `JavaScript` `Three.js` `WebGL` | [Inspect Code](https://github.com/drkkanhacreation/portfolio3d) |
+| **sakala-bhajana** | Sakala Ra Dhupa — Nostalgic 1990s Sunday morning Odia devotional web cultural experience. | `JavaScript` `HTML5/CSS3` `Web Audio` | [Inspect Code](https://github.com/drkkanhacreation/sakala-bhajana) |
+| **Coding Samurai Internship Task** | Android & Web engineering repository featuring real-world tasks and modern implementations. | `JavaScript` `Android` `REST APIs` | [Inspect Code](https://github.com/drkkanhacreation/CODING-SAMURAI-INTERNSHIP-TASK) |
 
 <div align="center">
 
-![Connect](./assets/connect.svg?v=5)
+![Connect](./assets/connect.svg?v=6)
 
 ### 🤝 Connect with Swadhinjit
 
@@ -37,11 +38,11 @@
   </a>
   &nbsp;
   <a href="https://drkkanhacreation.my.canva.site/dkc" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-070B16?style=for-the-badge&logo=googlechrome&logoColor=247BFF" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-0B1938?style=for-the-badge&logo=googlechrome&logoColor=38BDF8" alt="Portfolio" />
   </a>
   &nbsp;
-  <a href="https://github.com/swadhin-afk" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  <a href="https://github.com/drkkanhacreation" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-10224A?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
   &nbsp;
   <a href="mailto:swadhinjitshoo@gmail.com">
@@ -51,7 +52,7 @@
 
 <p align="center">
   <sub>"Bridging intelligent software and autonomous hardware at IG Drones."</sub><br/>
-  <sub>© 2026 Swadhinjit Sahoo · IG Drones Autonomous Systems</sub>
+  <sub>© 2026 Swadhinjit Sahoo · Drone Engineer @ IG Drones</sub>
 </p>
 
 </div>

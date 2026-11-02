@@ -1,29 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" width="100%" height="100%">
   <defs>
     <linearGradient id="about-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070B16"/>
-      <stop offset="50%" stop-color="#0A1224"/>
-      <stop offset="100%" stop-color="#070B16"/>
+      <stop offset="0%" stop-color="#0B1938"/>
+      <stop offset="50%" stop-color="#132758"/>
+      <stop offset="100%" stop-color="#0B1938"/>
     </linearGradient>
 
     <linearGradient id="about-border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#247BFF" stop-opacity="0.7"/>
-      <stop offset="50%" stop-color="#070B16"/>
-      <stop offset="100%" stop-color="#FF354F" stop-opacity="0.7"/>
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#10224A"/>
+      <stop offset="100%" stop-color="#FF354F" stop-opacity="0.8"/>
     </linearGradient>
 
     <linearGradient id="about-card-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0E1933"/>
-      <stop offset="100%" stop-color="#080E1C"/>
+      <stop offset="0%" stop-color="#12244E"/>
+      <stop offset="100%" stop-color="#0E1B3B"/>
     </linearGradient>
 
     <linearGradient id="about-progress-fill" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#247BFF"/>
+      <stop offset="0%" stop-color="#38BDF8"/>
       <stop offset="100%" stop-color="#FF354F"/>
     </linearGradient>
 
     <pattern id="about-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#247BFF" stroke-width="0.5" stroke-opacity="0.08"/>
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#38BDF8" stroke-width="0.5" stroke-opacity="0.12"/>
     </pattern>
   </defs>
 
@@ -79,64 +79,64 @@
   <!-- Main Container -->
   <rect x="10" y="10" width="940" height="360" rx="24" fill="url(#about-bg)"/>
   <rect x="10" y="10" width="940" height="360" rx="24" fill="url(#about-grid)"/>
-  <rect x="10" y="10" width="940" height="360" rx="24" fill="none" stroke="url(#about-border)" stroke-width="1.5"/>
+  <rect x="10" y="10" width="940" height="360" rx="24" fill="none" stroke="url(#about-border)" stroke-width="1.8"/>
 
   <!-- LEFT SECTION: CAPABILITIES -->
   <g transform="translate(50, 45)">
-    <text x="0" y="18" font-family="'SF Mono', Consolas, monospace" font-size="12" font-weight="700" fill="#247BFF" letter-spacing="1.5">SYSTEM ARCHITECTURE &amp; LEADERSHIP</text>
+    <text x="0" y="18" font-family="'SF Mono', Consolas, monospace" font-size="12" font-weight="700" fill="#38BDF8" letter-spacing="1.5">SYSTEM ARCHITECTURE &amp; LEADERSHIP</text>
     <text x="0" y="44" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="800" fill="#F4F6FC">Core Capabilities</text>
 
     <!-- Capability 1 -->
     <g transform="translate(0, 65)">
-      <rect x="0" y="0" width="390" height="52" rx="10" fill="url(#about-card-grad)" stroke="#247BFF" stroke-opacity="0.25" stroke-width="1"/>
+      <rect x="0" y="0" width="390" height="52" rx="10" fill="url(#about-card-grad)" stroke="#38BDF8" stroke-opacity="0.35" stroke-width="1"/>
       <circle cx="26" cy="26" r="14" fill="#0C1B3B"/>
       <text x="21" y="31" font-size="14">🛸</text>
       <text x="50" y="24" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" fill="#F4F6FC">Autonomous Robot &amp; Drone OS</text>
-      <text x="50" y="40" font-family="-apple-system, sans-serif" font-size="11" fill="#8B9BB4">Mission flight stacks, sensor fusion &amp; real-time control</text>
+      <text x="50" y="40" font-family="-apple-system, sans-serif" font-size="11" fill="#93C5FD">Mission flight stacks, sensor fusion &amp; real-time control</text>
     </g>
 
     <!-- Capability 2 -->
     <g transform="translate(0, 126)">
-      <rect x="0" y="0" width="390" height="52" rx="10" fill="url(#about-card-grad)" stroke="#247BFF" stroke-opacity="0.25" stroke-width="1"/>
+      <rect x="0" y="0" width="390" height="52" rx="10" fill="url(#about-card-grad)" stroke="#38BDF8" stroke-opacity="0.35" stroke-width="1"/>
       <circle cx="26" cy="26" r="14" fill="#0C1B3B"/>
       <text x="21" y="31" font-size="14">🧠</text>
       <text x="50" y="24" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" fill="#F4F6FC">Edge AI &amp; Perception Pipelines</text>
-      <text x="50" y="40" font-family="-apple-system, sans-serif" font-size="11" fill="#8B9BB4">ROS, PyTorch, OpenCV &amp; low-latency embedded inference</text>
+      <text x="50" y="40" font-family="-apple-system, sans-serif" font-size="11" fill="#93C5FD">ROS, PyTorch, OpenCV &amp; low-latency embedded inference</text>
     </g>
 
     <!-- Capability 3 -->
     <g transform="translate(0, 187)">
-      <rect x="0" y="0" width="390" height="52" rx="10" fill="url(#about-card-grad)" stroke="#247BFF" stroke-opacity="0.25" stroke-width="1"/>
+      <rect x="0" y="0" width="390" height="52" rx="10" fill="url(#about-card-grad)" stroke="#38BDF8" stroke-opacity="0.35" stroke-width="1"/>
       <circle cx="26" cy="26" r="14" fill="#0C1B3B"/>
       <text x="21" y="31" font-size="14">⚡</text>
       <text x="50" y="24" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" fill="#F4F6FC">Full-Stack Control Stations</text>
-      <text x="50" y="40" font-family="-apple-system, sans-serif" font-size="11" fill="#8B9BB4">Next.js, TypeScript, telemetry dashboards &amp; cloud APIs</text>
+      <text x="50" y="40" font-family="-apple-system, sans-serif" font-size="11" fill="#93C5FD">Next.js, TypeScript, telemetry dashboards &amp; cloud APIs</text>
     </g>
 
     <!-- Capability 4 -->
     <g transform="translate(0, 248)">
-      <rect x="0" y="0" width="390" height="52" rx="10" fill="url(#about-card-grad)" stroke="#FF354F" stroke-opacity="0.3" stroke-width="1"/>
+      <rect x="0" y="0" width="390" height="52" rx="10" fill="url(#about-card-grad)" stroke="#FF354F" stroke-opacity="0.4" stroke-width="1"/>
       <circle cx="26" cy="26" r="14" fill="#240D17"/>
       <text x="21" y="31" font-size="14">🚀</text>
       <text x="50" y="24" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" fill="#F4F6FC">Drone Engineering &amp; Systems</text>
-      <text x="50" y="40" font-family="-apple-system, sans-serif" font-size="11" fill="#8B9BB4">Flight control, drone telemetry, sensor payload &amp; autonomous navigation</text>
+      <text x="50" y="40" font-family="-apple-system, sans-serif" font-size="11" fill="#FF708F">Flight control, drone telemetry, sensor payload &amp; autonomous navigation</text>
     </g>
   </g>
 
   <!-- DIVIDER LINE -->
-  <line x1="475" y1="45" x2="475" y2="335" stroke="#247BFF" stroke-opacity="0.2" stroke-dasharray="4 4"/>
+  <line x1="475" y1="45" x2="475" y2="335" stroke="#38BDF8" stroke-opacity="0.25" stroke-dasharray="4 4"/>
 
   <!-- RIGHT SECTION: 3-SLIDE CAROUSEL -->
   <g transform="translate(505, 45)">
-    <text x="0" y="18" font-family="'SF Mono', Consolas, monospace" font-size="12" font-weight="700" fill="#FF354F" letter-spacing="1.5">INTERESTS &amp; EXPLORATION // ROTATING</text>
+    <text x="0" y="18" font-family="'SF Mono', Consolas, monospace" font-size="12" font-weight="700" fill="#FF708F" letter-spacing="1.5">INTERESTS &amp; EXPLORATION // ROTATING</text>
     <text x="0" y="44" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="800" fill="#F4F6FC">Autonomous Horizons</text>
 
     <!-- Slide 1: Drones -->
     <g class="slide-1" transform="translate(0, 75)">
-      <rect x="0" y="0" width="410" height="185" rx="16" fill="#0C152C" stroke="#247BFF" stroke-width="1.5" stroke-opacity="0.5"/>
+      <rect x="0" y="0" width="410" height="185" rx="16" fill="#10224A" stroke="#38BDF8" stroke-width="1.6" stroke-opacity="0.6"/>
       <text x="25" y="42" font-size="28">🛸</text>
       <text x="65" y="40" font-family="-apple-system, sans-serif" font-size="18" font-weight="800" fill="#38BDF8">Autonomous Aerial Robotics</text>
-      <text x="25" y="75" font-family="-apple-system, sans-serif" font-size="13.5" fill="#C9D1D9" font-weight="400">
+      <text x="25" y="75" font-family="-apple-system, sans-serif" font-size="13.5" fill="#E2E8F0" font-weight="400">
         <tspan x="25" dy="0">Designing the next generation of intelligent drone OS.</tspan>
         <tspan x="25" dy="24">Focusing on robust autopilot autonomy, swarm coordination,</tspan>
         <tspan x="25" dy="24">real-time LIDAR/vision obstacle avoidance, and mission</tspan>
@@ -146,10 +146,10 @@
 
     <!-- Slide 2: Embedded & ROS -->
     <g class="slide-2" transform="translate(0, 75)">
-      <rect x="0" y="0" width="410" height="185" rx="16" fill="#0C152C" stroke="#FF354F" stroke-width="1.5" stroke-opacity="0.5"/>
+      <rect x="0" y="0" width="410" height="185" rx="16" fill="#10224A" stroke="#FF354F" stroke-width="1.6" stroke-opacity="0.6"/>
       <text x="25" y="42" font-size="28">🤖</text>
-      <text x="65" y="40" font-family="-apple-system, sans-serif" font-size="18" font-weight="800" fill="#FF354F">Embedded AI &amp; ROS Control</text>
-      <text x="25" y="75" font-family="-apple-system, sans-serif" font-size="13.5" fill="#C9D1D9" font-weight="400">
+      <text x="65" y="40" font-family="-apple-system, sans-serif" font-size="18" font-weight="800" fill="#FF708F">Embedded AI &amp; ROS Control</text>
+      <text x="25" y="75" font-family="-apple-system, sans-serif" font-size="13.5" fill="#E2E8F0" font-weight="400">
         <tspan x="25" dy="0">Writing low-level C++ firmware and high-level ROS nodes.</tspan>
         <tspan x="25" dy="24">Implementing neural network perception for robotic arms</tspan>
         <tspan x="25" dy="24">and wheeled rovers with micro-second responsiveness</tspan>
@@ -159,10 +159,10 @@
 
     <!-- Slide 3: Web & Control Stations -->
     <g class="slide-3" transform="translate(0, 75)">
-      <rect x="0" y="0" width="410" height="185" rx="16" fill="#0C152C" stroke="#A78BFA" stroke-width="1.5" stroke-opacity="0.5"/>
+      <rect x="0" y="0" width="410" height="185" rx="16" fill="#10224A" stroke="#C084FC" stroke-width="1.6" stroke-opacity="0.6"/>
       <text x="25" y="42" font-size="28">💻</text>
-      <text x="65" y="40" font-family="-apple-system, sans-serif" font-size="18" font-weight="800" fill="#A78BFA">Ground Stations &amp; Cloud Telemetry</text>
-      <text x="25" y="75" font-family="-apple-system, sans-serif" font-size="13.5" fill="#C9D1D9" font-weight="400">
+      <text x="65" y="40" font-family="-apple-system, sans-serif" font-size="18" font-weight="800" fill="#C084FC">Ground Stations &amp; Cloud Telemetry</text>
+      <text x="25" y="75" font-family="-apple-system, sans-serif" font-size="13.5" fill="#E2E8F0" font-weight="400">
         <tspan x="25" dy="0">Bridging hardware telemetry directly into browser dashboards.</tspan>
         <tspan x="25" dy="24">Leveraging Next.js, WebSockets, and distributed microservices</tspan>
         <tspan x="25" dy="24">to give operators full mission visibility, data analytics,</tspan>
@@ -173,19 +173,19 @@
     <!-- PROGRESS BARS (3 Segments) -->
     <g transform="translate(0, 280)">
       <!-- Segment 1 -->
-      <rect x="0" y="0" width="130" height="6" rx="3" fill="#14203D"/>
+      <rect x="0" y="0" width="130" height="6" rx="3" fill="#172A56"/>
       <rect x="0" y="0" width="0" height="6" rx="3" fill="url(#about-progress-fill)" class="bar-fill-1"/>
-      <text x="0" y="20" font-family="'SF Mono', monospace" font-size="10" fill="#8B9BB4">01 DRONES</text>
+      <text x="0" y="20" font-family="'SF Mono', monospace" font-size="10" fill="#93C5FD">01 DRONES</text>
 
       <!-- Segment 2 -->
-      <rect x="140" y="0" width="130" height="6" rx="3" fill="#14203D"/>
+      <rect x="140" y="0" width="130" height="6" rx="3" fill="#172A56"/>
       <rect x="140" y="0" width="0" height="6" rx="3" fill="url(#about-progress-fill)" class="bar-fill-2"/>
-      <text x="140" y="20" font-family="'SF Mono', monospace" font-size="10" fill="#8B9BB4">02 ROBOTICS</text>
+      <text x="140" y="20" font-family="'SF Mono', monospace" font-size="10" fill="#93C5FD">02 ROBOTICS</text>
 
       <!-- Segment 3 -->
-      <rect x="280" y="0" width="130" height="6" rx="3" fill="#14203D"/>
+      <rect x="280" y="0" width="130" height="6" rx="3" fill="#172A56"/>
       <rect x="280" y="0" width="0" height="6" rx="3" fill="url(#about-progress-fill)" class="bar-fill-3"/>
-      <text x="280" y="20" font-family="'SF Mono', monospace" font-size="10" fill="#8B9BB4">03 SOFTWARE</text>
+      <text x="280" y="20" font-family="'SF Mono', monospace" font-size="10" fill="#93C5FD">03 SOFTWARE</text>
     </g>
   </g>
 </svg>
