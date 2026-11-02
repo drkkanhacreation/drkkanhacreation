@@ -28,8 +28,8 @@
     </clipPath>
   </defs>
 
-  <style>
-    /* STATIC FALLBACK: Hide slides 2 and 3 by default so static rendering NEVER overlaps! */
+        <style>
+    /* STATIC FALLBACK: Slides 2 and 3 hidden by default */
     .ab-slide-2, .ab-slide-3 {
       opacity: 0;
     }
@@ -37,21 +37,21 @@
       opacity: 1;
     }
 
-    /* Animated Carousel: 12s total loop, 3 slides @ 4s each */
+    /* Animated Carousel: Pure opacity cross-fade (ZERO transform displacement!) */
     @keyframes about-slide-1 {
-      0%, 30% { opacity: 1; transform: translateX(0); }
-      33%, 97% { opacity: 0; transform: translateX(12px); }
-      100% { opacity: 1; transform: translateX(0); }
+      0%, 30% { opacity: 1; }
+      33%, 97% { opacity: 0; }
+      100% { opacity: 1; }
     }
     @keyframes about-slide-2 {
-      0%, 30% { opacity: 0; transform: translateX(-12px); }
-      33%, 63% { opacity: 1; transform: translateX(0); }
-      66%, 100% { opacity: 0; transform: translateX(12px); }
+      0%, 30% { opacity: 0; }
+      33%, 63% { opacity: 1; }
+      66%, 100% { opacity: 0; }
     }
     @keyframes about-slide-3 {
-      0%, 63% { opacity: 0; transform: translateX(-12px); }
-      66%, 96% { opacity: 1; transform: translateX(0); }
-      100% { opacity: 0; transform: translateX(12px); }
+      0%, 63% { opacity: 0; }
+      66%, 96% { opacity: 1; }
+      100% { opacity: 0; }
     }
 
     @keyframes bar-prog-1 {
@@ -78,7 +78,7 @@
     @media (prefers-reduced-motion: reduce) {
       .ab-slide-1, .ab-slide-2, .ab-slide-3, .prog-1, .prog-2, .prog-3 { animation: none !important; }
       .ab-slide-2, .ab-slide-3 { display: none !important; }
-      .ab-slide-1 { opacity: 1 !important; transform: none !important; }
+      .ab-slide-1 { opacity: 1 !important; }
       .prog-1 { width: 110px !important; }
     }
   </style>
@@ -149,12 +149,12 @@
     <rect x="0" y="0" width="430" height="350" rx="16" fill="url(#about-card-bg)" stroke="#FF354F" stroke-opacity="0.35" stroke-width="1.2"/>
 
     <!-- Section Header with Red Accent Bars at top right corner -->
-    <g transform="translate(24, 20)">
-      <text x="0" y="0" font-family="'SF Mono', monospace" font-size="10" font-weight="700" fill="#FF708F" letter-spacing="1">03 / LIFE OUTSIDE THE COMMIT</text>
-      <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Impact', sans-serif" font-size="20" font-weight="900" fill="#F4F6FC" letter-spacing="1">MORE THAN A JOB TITLE.</text>
+    <g transform="translate(24, 16)">
+      <text x="0" y="10" font-family="'SF Mono', monospace" font-size="9" font-weight="700" fill="#FF708F" letter-spacing="1">03 / LIFE OUTSIDE THE COMMIT</text>
+      <text x="0" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="900" fill="#F4F6FC" letter-spacing="0.5">MORE THAN A JOB TITLE.</text>
 
       <!-- Red Slanted Accent Bars /// (Safely placed in corner, zero overlap) -->
-      <g transform="translate(355, 6)">
+      <g transform="translate(355, 10)">
         <polygon points="0,14 4,0 7,0 3,14" fill="#FF354F"/>
         <polygon points="6,14 10,0 13,0 9,14" fill="#FF354F"/>
         <polygon points="12,14 16,0 19,0 15,14" fill="#FF354F"/>
@@ -162,7 +162,7 @@
     </g>
 
     <!-- Top Segment Progress Bars -->
-    <g transform="translate(24, 62)">
+    <g transform="translate(24, 52)">
       <rect x="0" y="0" width="115" height="4" rx="2" fill="#172A56"/>
       <rect x="0" y="0" width="0" height="4" rx="2" fill="url(#bar-fill-grad)" class="prog-1"/>
 
@@ -174,7 +174,7 @@
     </g>
 
     <!-- Slide 1: Autonomous Flight Focus -->
-    <g class="ab-slide-1" transform="translate(24, 80)">
+    <g class="ab-slide-1" transform="translate(24, 70)">
       <g>
         <rect x="0" y="0" width="115" height="135" rx="10" fill="#070D1A" stroke="#38BDF8" stroke-width="1.2"/>
         <g clip-path="url(#about-mini-clip)">
@@ -199,7 +199,7 @@
     </g>
 
     <!-- Slide 2: Robotics & AI Edge -->
-    <g class="ab-slide-2" transform="translate(24, 80)">
+    <g class="ab-slide-2" transform="translate(24, 76)">
       <g>
         <rect x="0" y="0" width="115" height="135" rx="10" fill="#070D1A" stroke="#FF354F" stroke-width="1.2"/>
         <g clip-path="url(#about-mini-clip)">
@@ -224,7 +224,7 @@
     </g>
 
     <!-- Slide 3: Web & Control Dashboard -->
-    <g class="ab-slide-3" transform="translate(24, 80)">
+    <g class="ab-slide-3" transform="translate(24, 76)">
       <g>
         <rect x="0" y="0" width="115" height="135" rx="10" fill="#070D1A" stroke="#C084FC" stroke-width="1.2"/>
         <g clip-path="url(#about-mini-clip)">

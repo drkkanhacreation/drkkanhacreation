@@ -57,15 +57,16 @@
   <!-- ================= LEFT: HANGING LANYARD PASS (Ref 4) ================= -->
   <g class="hanging-badge" transform="translate(65, 0)">
     <!-- Lanyard Blue Fabric Strap with Text -->
-    <rect x="155" y="0" width="40" height="65" fill="#1D4ED8"/>
-    <line x1="155" y1="0" x2="155" y2="65" stroke="#38BDF8" stroke-width="1"/>
-    <line x1="195" y1="0" x2="195" y2="65" stroke="#38BDF8" stroke-width="1"/>
-    <text x="175" y="40" text-anchor="middle" font-family="'SF Mono', monospace" font-size="8" font-weight="900" fill="#FFFFFF" transform="rotate(-90 175 40)">IG // DRONE</text>
+    <rect x="155" y="0" width="40" height="60" fill="#1D4ED8"/>
+    <line x1="155" y1="0" x2="155" y2="60" stroke="#38BDF8" stroke-width="1"/>
+    <line x1="195" y1="0" x2="195" y2="60" stroke="#38BDF8" stroke-width="1"/>
+    <text x="175" y="30" text-anchor="middle" font-family="'SF Mono', monospace" font-size="7.5" font-weight="900" fill="#FFFFFF" transform="rotate(-90 175 30)" letter-spacing="1">IG // DRONE</text>
 
-    <!-- Metal Clasp & Swivel Hook -->
-    <rect x="162" y="60" width="26" height="18" rx="3" fill="url(#lanyard-metal)"/>
-    <ellipse cx="175" cy="80" rx="10" ry="7" fill="none" stroke="url(#lanyard-metal)" stroke-width="3"/>
-    <path d="M 175 86 L 175 98" stroke="url(#lanyard-metal)" stroke-width="4" stroke-linecap="round"/>
+    <!-- Metal Clasp & Swivel Hook Assembly -->
+    <rect x="162" y="58" width="26" height="14" rx="2" fill="url(#lanyard-metal)"/>
+    <circle cx="175" cy="76" r="4.5" fill="url(#lanyard-metal)"/>
+    <!-- Carabiner Hook cleanly looping through Card Slot at Y=106 -->
+    <path d="M 172 78 C 168 88 168 112 175 112 C 182 112 182 88 178 78 Z" fill="none" stroke="url(#lanyard-metal)" stroke-width="3.5" stroke-linejoin="round"/>
 
     <!-- Physical Pass Card (X=65, Y=98, W=220, H=340) -->
     <g transform="translate(65, 98)">
@@ -93,17 +94,18 @@
         <text x="28" y="161" font-family="'SF Mono', monospace" font-size="8.5" font-weight="800" fill="#38BDF8">DRONE ENGINEER</text>
       </g>
 
-      <!-- Name & Location on Card -->
-      <text x="20" y="242" font-family="-apple-system, BlinkMacSystemFont, 'Impact', sans-serif" font-size="18" font-weight="900" fill="#F4F6FC" letter-spacing="0.5">SWADHINJIT SAHOO</text>
-      <text x="20" y="258" font-family="'SF Mono', monospace" font-size="9" fill="#93C5FD">BHUBANESWAR / INDIA</text>
-
-      <!-- Golden Smartcard Chip (Ref 4) -->
-      <g transform="translate(162, 230)">
-        <rect x="0" y="0" width="38" height="28" rx="4" fill="url(#gold-chip)" stroke="#D97706" stroke-width="1"/>
-        <line x1="12" y1="0" x2="12" y2="28" stroke="#92400E" stroke-width="0.8"/>
-        <line x1="26" y1="0" x2="26" y2="28" stroke="#92400E" stroke-width="0.8"/>
-        <line x1="0" y1="14" x2="38" y2="14" stroke="#92400E" stroke-width="0.8"/>
+      <!-- Golden Smartcard Chip (Safely placed at X=164, Y=228) -->
+      <g transform="translate(164, 228)">
+        <rect x="0" y="0" width="36" height="26" rx="4" fill="url(#gold-chip)" stroke="#D97706" stroke-width="1"/>
+        <line x1="12" y1="0" x2="12" y2="26" stroke="#92400E" stroke-width="0.8"/>
+        <line x1="24" y1="0" x2="24" y2="26" stroke="#92400E" stroke-width="0.8"/>
+        <line x1="0" y1="13" x2="36" y2="13" stroke="#92400E" stroke-width="0.8"/>
       </g>
+
+      <!-- Identity Details (Width ~125px, leaving 20px gap before chip at 164) -->
+      <text x="20" y="238" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12.5" font-weight="900" fill="#F4F6FC" letter-spacing="0.6">SWADHINJIT SAHOO</text>
+      <text x="20" y="252" font-family="'SF Mono', monospace" font-size="8.5" font-weight="700" fill="#38BDF8">BHUBANESWAR / INDIA</text>
+      <text x="20" y="264" font-family="'SF Mono', monospace" font-size="7.5" fill="#93C5FD">ID: IG063 // SYSTEM-FLIGHT-ID</text>
 
       <!-- Barcode Graphic (Ref 4) -->
       <g transform="translate(20, 276)">
