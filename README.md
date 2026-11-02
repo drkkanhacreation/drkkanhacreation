@@ -51,7 +51,7 @@
 
 <p align="center">
   <sub>"Bridging intelligent software and autonomous hardware at Spacebon."</sub><br/>
-  <sub>© 2026 Swadhinjit Sahoo · Spacebon Autonomous Systems</sub>
+  <sub>© 2026 Swadhinjit Sahoo · ID DRONE</sub>
 </p>
 
 </div>
