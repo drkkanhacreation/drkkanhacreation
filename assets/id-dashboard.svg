@@ -157,7 +157,7 @@
 
           <!-- Security Badge underneath photo -->
           <rect x="0" y="210" width="170" height="24" rx="6" fill="#0C152B" stroke="#247BFF" stroke-opacity="0.4" stroke-width="1"/>
-          <text x="85" y="226" text-anchor="middle" font-family="'SF Mono', monospace" font-size="10" font-weight="700" fill="#38BDF8">ID: IGD-ENG-2026</text>
+          <text x="85" y="226" text-anchor="middle" font-family="'SF Mono', monospace" font-size="10" font-weight="700" fill="#38BDF8">ID: IG063</text>
         </g>
 
         <!-- Middle Column: Verified Credentials -->
@@ -177,19 +177,25 @@
           <!-- Verified Metrics Dashboard Grid -->
           <g transform="translate(0, 125)">
             <!-- Box 1: Public Repos -->
-            <rect x="0" y="0" width="135" height="58" rx="8" fill="#0B1328" stroke="#247BFF" stroke-opacity="0.3" stroke-width="1"/>
-            <text x="15" y="22" font-family="'SF Mono', monospace" font-size="10" fill="#8B9BB4">PUBLIC REPOS</text>
-            <text x="15" y="46" font-family="-apple-system, sans-serif" font-size="22" font-weight="800" fill="#F4F6FC">7+</text>
+            <g transform="translate(0, 0)">
+              <rect x="0" y="0" width="135" height="58" rx="8" fill="#0B1328" stroke="#247BFF" stroke-opacity="0.4" stroke-width="1"/>
+              <text x="16" y="23" font-family="'SF Mono', monospace" font-size="10" font-weight="700" fill="#8B9BB4">PUBLIC REPOS</text>
+              <text x="16" y="46" font-family="-apple-system, sans-serif" font-size="22" font-weight="800" fill="#F4F6FC">7+</text>
+            </g>
 
-            <!-- Box 2: Organization -->
-            <rect x="145" y="0" width="135" height="58" rx="8" fill="#0B1328" stroke="#FF354F" stroke-opacity="0.3" stroke-width="1"/>
-            <text x="15" y="22" font-family="'SF Mono', monospace" font-size="10" fill="#8B9BB4">ROLE</text>
-            <text x="15" y="46" font-family="-apple-system, sans-serif" font-size="18" font-weight="800" fill="#FF708F">DRONE ENG</text>
+            <!-- Box 2: Organization / Role -->
+            <g transform="translate(145, 0)">
+              <rect x="0" y="0" width="135" height="58" rx="8" fill="#0B1328" stroke="#FF354F" stroke-opacity="0.4" stroke-width="1"/>
+              <text x="16" y="23" font-family="'SF Mono', monospace" font-size="10" font-weight="700" fill="#8B9BB4">ROLE</text>
+              <text x="16" y="46" font-family="-apple-system, sans-serif" font-size="15" font-weight="800" fill="#FF708F">DRONE ENG</text>
+            </g>
 
             <!-- Box 3: Stack Focus -->
-            <rect x="290" y="0" width="135" height="58" rx="8" fill="#0B1328" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
-            <text x="15" y="22" font-family="'SF Mono', monospace" font-size="10" fill="#8B9BB4">CORE STACK</text>
-            <text x="15" y="46" font-family="-apple-system, sans-serif" font-size="18" font-weight="800" fill="#38BDF8">ROS / AI</text>
+            <g transform="translate(290, 0)">
+              <rect x="0" y="0" width="135" height="58" rx="8" fill="#0B1328" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1"/>
+              <text x="16" y="23" font-family="'SF Mono', monospace" font-size="10" font-weight="700" fill="#8B9BB4">CORE STACK</text>
+              <text x="16" y="46" font-family="-apple-system, sans-serif" font-size="15" font-weight="800" fill="#38BDF8">ROS / AI</text>
+            </g>
           </g>
 
           <!-- Verified Chips Row -->
