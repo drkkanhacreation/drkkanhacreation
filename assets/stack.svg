@@ -37,7 +37,6 @@
       <stop offset="100%" stop-color="#FF354F" stop-opacity="0.15"/>
     </linearGradient>
 
-    <!-- Card Background -->
     <linearGradient id="tech-card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#10224A"/>
       <stop offset="100%" stop-color="#0A1428"/>
@@ -87,127 +86,110 @@
   <!-- Horizontal Hairline Divider -->
   <line x1="45" y1="64" x2="915" y2="64" stroke="#38BDF8" stroke-opacity="0.25" stroke-width="1"/>
 
-  <!-- ================= LEFT: 3D ISOMETRIC CUBE + ORBITAL MATRIX ================= -->
-  <g transform="translate(230, 220)">
-    <!-- Orbit 1 (tilted -25 deg) -->
+  <!-- ================= LEFT: 3D ISOMETRIC CUBE + ORBITAL MATRIX (ELEVATED Y=195) ================= -->
+  <g transform="translate(225, 195)">
+    <!-- Orbit 1 (tilted -25 deg, rx=145, ry=48) -->
     <g transform="rotate(-25)">
-      <ellipse cx="0" cy="0" rx="170" ry="60" fill="none" stroke="url(#stk-orbit-1)" stroke-width="1.6" stroke-dasharray="6 5" class="orbit-anim-1"/>
-      <!-- Node: ROS -->
-      <g transform="translate(-160, 0)" class="pulse-node">
-        <circle cx="0" cy="0" r="16" fill="#10224A" stroke="#38BDF8" stroke-width="1.5"/>
-        <text x="0" y="4" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9" font-weight="800" fill="#38BDF8">ROS</text>
+      <ellipse cx="0" cy="0" rx="145" ry="48" fill="none" stroke="url(#stk-orbit-1)" stroke-width="1.5" stroke-dasharray="6 5" class="orbit-anim-1"/>
+      <g transform="translate(-135, 0)" class="pulse-node">
+        <circle cx="0" cy="0" r="15" fill="#10224A" stroke="#38BDF8" stroke-width="1.4"/>
+        <text x="0" y="4" text-anchor="middle" font-family="'SF Mono', monospace" font-size="8.5" font-weight="800" fill="#38BDF8">ROS</text>
       </g>
-      <!-- Node: OpenCV -->
-      <g transform="translate(160, 0)" class="pulse-node">
-        <circle cx="0" cy="0" r="16" fill="#10224A" stroke="#38BDF8" stroke-width="1.5"/>
+      <g transform="translate(135, 0)" class="pulse-node">
+        <circle cx="0" cy="0" r="15" fill="#10224A" stroke="#38BDF8" stroke-width="1.4"/>
         <text x="0" y="4" text-anchor="middle" font-family="'SF Mono', monospace" font-size="8" font-weight="800" fill="#38BDF8">CV</text>
       </g>
     </g>
 
-    <!-- Orbit 2 (tilted 35 deg) -->
+    <!-- Orbit 2 (tilted 35 deg, rx=130, ry=45) -->
     <g transform="rotate(35)">
-      <ellipse cx="0" cy="0" rx="150" ry="55" fill="none" stroke="url(#stk-orbit-2)" stroke-width="1.6" stroke-dasharray="6 5" class="orbit-anim-2"/>
-      <!-- Node: PyTorch -->
-      <g transform="translate(0, -55)" class="pulse-node">
-        <circle cx="0" cy="0" r="16" fill="#20152E" stroke="#FF354F" stroke-width="1.5"/>
-        <text x="0" y="4" text-anchor="middle" font-family="'SF Mono', monospace" font-size="8" font-weight="800" fill="#FF708F">TORCH</text>
+      <ellipse cx="0" cy="0" rx="130" ry="45" fill="none" stroke="url(#stk-orbit-2)" stroke-width="1.5" stroke-dasharray="6 5" class="orbit-anim-2"/>
+      <g transform="translate(0, -45)" class="pulse-node">
+        <circle cx="0" cy="0" r="15" fill="#20152E" stroke="#FF354F" stroke-width="1.4"/>
+        <text x="0" y="4" text-anchor="middle" font-family="'SF Mono', monospace" font-size="7.5" font-weight="800" fill="#FF708F">TORCH</text>
       </g>
-      <!-- Node: C++ -->
-      <g transform="translate(0, 55)" class="pulse-node">
-        <circle cx="0" cy="0" r="16" fill="#10224A" stroke="#38BDF8" stroke-width="1.5"/>
-        <text x="0" y="4" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9" font-weight="800" fill="#38BDF8">C++</text>
+      <g transform="translate(0, 45)" class="pulse-node">
+        <circle cx="0" cy="0" r="15" fill="#10224A" stroke="#38BDF8" stroke-width="1.4"/>
+        <text x="0" y="4" text-anchor="middle" font-family="'SF Mono', monospace" font-size="8.5" font-weight="800" fill="#38BDF8">C++</text>
       </g>
     </g>
 
     <!-- Pulsing Red Laser Energy Line -->
-    <line x1="-30" y1="20" x2="110" y2="-40" stroke="#FF354F" stroke-width="2.5" stroke-opacity="0.85"/>
-    <circle cx="110" cy="-40" r="4" fill="#FF354F"/>
+    <line x1="-25" y1="18" x2="95" y2="-35" stroke="#FF354F" stroke-width="2.2" stroke-opacity="0.85"/>
+    <circle cx="95" cy="-35" r="3.5" fill="#FF354F"/>
 
-    <!-- 3D Isometric Center Cube (Exact Ref 3 visual) -->
-    <g transform="translate(0, -10)">
-      <!-- Top Face -->
-      <polygon points="0,-38 32,-20 0,-2 -32,-20" fill="url(#cube-top)"/>
-      <!-- Left Face -->
-      <polygon points="-32,-20 0,-2 0,36 -32,18" fill="url(#cube-left)"/>
-      <!-- Right Face -->
-      <polygon points="0,-2 32,-20 32,18 0,36" fill="url(#cube-right)"/>
+    <!-- 3D Isometric Center Cube -->
+    <g transform="translate(0, -8)">
+      <polygon points="0,-34 28,-18 0,-2 -28,-18" fill="url(#cube-top)"/>
+      <polygon points="-28,-18 0,-2 0,32 -28,16" fill="url(#cube-left)"/>
+      <polygon points="0,-2 28,-18 28,16 0,32" fill="url(#cube-right)"/>
 
-      <!-- Cube Core Monogram (DKC / IG) -->
-      <text x="0" y="16" text-anchor="middle" font-family="'SF Mono', monospace" font-size="12" font-weight="900" fill="#FFFFFF" letter-spacing="1">IG</text>
-      <text x="0" y="-14" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9" font-weight="800" fill="#FFFFFF">AI</text>
+      <text x="0" y="14" text-anchor="middle" font-family="'SF Mono', monospace" font-size="11" font-weight="900" fill="#FFFFFF" letter-spacing="1">IG</text>
+      <text x="0" y="-12" text-anchor="middle" font-family="'SF Mono', monospace" font-size="8.5" font-weight="800" fill="#FFFFFF">AI</text>
     </g>
   </g>
 
   <!-- Vertical Divider Line -->
-  <line x1="450" y1="80" x2="450" y2="350" stroke="#38BDF8" stroke-opacity="0.2" stroke-width="1"/>
+  <line x1="440" y1="80" x2="440" y2="350" stroke="#38BDF8" stroke-opacity="0.2" stroke-width="1"/>
 
-  <!-- ================= RIGHT: 3x3 CATEGORIZED TECH CHIPS (Ref 3) ================= -->
-  <g transform="translate(480, 80)">
+  <!-- ================= RIGHT: 3x3 CATEGORIZED TECH CHIPS ================= -->
+  <g transform="translate(470, 80)">
     <!-- Group 1: 01 / LANGUAGES & EMBEDDED -->
-    <text x="0" y="12" font-family="'SF Mono', monospace" font-size="10" font-weight="700" fill="#93C5FD">01 / LANGUAGES &amp; ROBOTICS</text>
-    <g transform="translate(0, 22)">
-      <!-- Card 1: C++ -->
-      <rect x="0" y="0" width="135" height="42" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
-      <line x1="12" y1="36" x2="45" y2="36" stroke="#38BDF8" stroke-width="2"/>
-      <text x="14" y="24" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#F4F6FC">⚡ C++</text>
+    <text x="0" y="12" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#93C5FD">01 / LANGUAGES &amp; ROBOTICS</text>
+    <g transform="translate(0, 20)">
+      <rect x="0" y="0" width="135" height="40" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
+      <line x1="12" y1="34" x2="45" y2="34" stroke="#38BDF8" stroke-width="2"/>
+      <text x="14" y="23" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#F4F6FC">⚡ C++</text>
 
-      <!-- Card 2: Python -->
-      <rect x="145" y="0" width="135" height="42" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
-      <line x1="157" y1="36" x2="190" y2="36" stroke="#38BDF8" stroke-width="2"/>
-      <text x="159" y="24" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#F4F6FC">🐍 Python</text>
+      <rect x="145" y="0" width="135" height="40" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
+      <line x1="157" y1="34" x2="190" y2="34" stroke="#38BDF8" stroke-width="2"/>
+      <text x="159" y="23" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#F4F6FC">🐍 Python</text>
 
-      <!-- Card 3: ROS -->
-      <rect x="290" y="0" width="135" height="42" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
-      <line x1="302" y1="36" x2="335" y2="36" stroke="#38BDF8" stroke-width="2"/>
-      <text x="304" y="24" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#F4F6FC">🤖 ROS / ROS2</text>
+      <rect x="290" y="0" width="135" height="40" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
+      <line x1="302" y1="34" x2="335" y2="34" stroke="#38BDF8" stroke-width="2"/>
+      <text x="304" y="23" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#F4F6FC">🤖 ROS / ROS2</text>
     </g>
 
     <!-- Group 2: 02 / PERCEPTION & VISION -->
-    <g transform="translate(0, 80)">
-      <text x="0" y="12" font-family="'SF Mono', monospace" font-size="10" font-weight="700" fill="#93C5FD">02 / PERCEPTION &amp; VISION</text>
-      <g transform="translate(0, 22)">
-        <!-- Card 4: PyTorch -->
-        <rect x="0" y="0" width="135" height="42" rx="8" fill="url(#tech-card-bg)" stroke="#FF354F" stroke-opacity="0.35" stroke-width="1"/>
-        <line x1="12" y1="36" x2="45" y2="36" stroke="#FF354F" stroke-width="2"/>
-        <text x="14" y="24" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#FF708F">🧠 PyTorch</text>
+    <g transform="translate(0, 78)">
+      <text x="0" y="12" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#93C5FD">02 / PERCEPTION &amp; VISION</text>
+      <g transform="translate(0, 20)">
+        <rect x="0" y="0" width="135" height="40" rx="8" fill="url(#tech-card-bg)" stroke="#FF354F" stroke-opacity="0.35" stroke-width="1"/>
+        <line x1="12" y1="34" x2="45" y2="34" stroke="#FF354F" stroke-width="2"/>
+        <text x="14" y="23" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#FF708F">🧠 PyTorch</text>
 
-        <!-- Card 5: OpenCV -->
-        <rect x="145" y="0" width="135" height="42" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
-        <line x1="157" y1="36" x2="190" y2="36" stroke="#38BDF8" stroke-width="2"/>
-        <text x="159" y="24" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#F4F6FC">👁️ OpenCV</text>
+        <rect x="145" y="0" width="135" height="40" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
+        <line x1="157" y1="34" x2="190" y2="34" stroke="#38BDF8" stroke-width="2"/>
+        <text x="159" y="23" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#F4F6FC">👁️ OpenCV</text>
 
-        <!-- Card 6: Embedded Systems -->
-        <rect x="290" y="0" width="135" height="42" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
-        <line x1="302" y1="36" x2="335" y2="36" stroke="#38BDF8" stroke-width="2"/>
-        <text x="304" y="24" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#F4F6FC">🛸 Embedded</text>
+        <rect x="290" y="0" width="135" height="40" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
+        <line x1="302" y1="34" x2="335" y2="34" stroke="#38BDF8" stroke-width="2"/>
+        <text x="304" y="23" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#F4F6FC">🛸 Embedded</text>
       </g>
     </g>
 
     <!-- Group 3: 03 / WEB, CLOUD & UI -->
-    <g transform="translate(0, 160)">
-      <text x="0" y="12" font-family="'SF Mono', monospace" font-size="10" font-weight="700" fill="#93C5FD">03 / WEB, CLOUD &amp; CONTROL</text>
-      <g transform="translate(0, 22)">
-        <!-- Card 7: React / Next.js -->
-        <rect x="0" y="0" width="135" height="42" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
-        <line x1="12" y1="36" x2="45" y2="36" stroke="#38BDF8" stroke-width="2"/>
-        <text x="14" y="24" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#F4F6FC">⚛️ React/Next</text>
+    <g transform="translate(0, 156)">
+      <text x="0" y="12" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#93C5FD">03 / WEB, CLOUD &amp; CONTROL</text>
+      <g transform="translate(0, 20)">
+        <rect x="0" y="0" width="135" height="40" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
+        <line x1="12" y1="34" x2="45" y2="34" stroke="#38BDF8" stroke-width="2"/>
+        <text x="14" y="23" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#F4F6FC">⚛️ React/Next</text>
 
-        <!-- Card 8: TypeScript -->
-        <rect x="145" y="0" width="135" height="42" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
-        <line x1="157" y1="36" x2="190" y2="36" stroke="#38BDF8" stroke-width="2"/>
-        <text x="159" y="24" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#F4F6FC">TS TypeScript</text>
+        <rect x="145" y="0" width="135" height="40" rx="8" fill="url(#tech-card-bg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
+        <line x1="157" y1="34" x2="190" y2="34" stroke="#38BDF8" stroke-width="2"/>
+        <text x="159" y="23" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#F4F6FC">TS TypeScript</text>
 
-        <!-- Card 9: Docker & Cloud -->
-        <rect x="290" y="0" width="135" height="42" rx="8" fill="url(#tech-card-bg)" stroke="#FF354F" stroke-opacity="0.35" stroke-width="1"/>
-        <line x1="302" y1="36" x2="335" y2="36" stroke="#FF354F" stroke-width="2"/>
-        <text x="304" y="24" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#FF708F">🐋 Docker/API</text>
+        <rect x="290" y="0" width="135" height="40" rx="8" fill="url(#tech-card-bg)" stroke="#FF354F" stroke-opacity="0.35" stroke-width="1"/>
+        <line x1="302" y1="34" x2="335" y2="34" stroke="#FF354F" stroke-width="2"/>
+        <text x="304" y="23" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#FF708F">🐋 Docker/API</text>
       </g>
     </g>
 
-    <!-- Footer Tagline Row (Ref 3) -->
-    <g transform="translate(0, 255)">
+    <!-- Footer Tagline Row (Safely elevated at Y=250) -->
+    <g transform="translate(0, 252)">
       <text x="0" y="0" font-family="'SF Mono', monospace" font-size="9" fill="#93C5FD" letter-spacing="1">CODE IS THE TOOL. AUTONOMY IS THE MISSION.</text>
-      <text x="280" y="0" font-family="'SF Mono', monospace" font-size="9" fill="#FF708F" letter-spacing="1">BUILD / TEST / FLY / REPEAT</text>
+      <text x="270" y="0" font-family="'SF Mono', monospace" font-size="9" fill="#FF708F" letter-spacing="1">BUILD / TEST / FLY / REPEAT</text>
     </g>
   </g>
 </svg>
