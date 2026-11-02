@@ -2,9 +2,11 @@
   <defs>
     <!-- Card Gradients -->
     <linearGradient id="id-card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B1938"/>
-      <stop offset="50%" stop-color="#162E62"/>
-      <stop offset="100%" stop-color="#0B1938"/>
+      <stop offset="0%" stop-color="#0A111E"/>
+      <stop offset="25%" stop-color="#0D1832"/>
+      <stop offset="50%" stop-color="#132652"/>
+      <stop offset="75%" stop-color="#0D1832"/>
+      <stop offset="100%" stop-color="#0A111E"/>
     </linearGradient>
 
     <linearGradient id="id-card-border" x1="0%" y1="0%" x2="100%" y2="100%">
