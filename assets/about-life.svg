@@ -100,120 +100,120 @@
 
     
     /* ================= ADVANCED AUTONOMOUS BIPEDAL ROBOT PATROL ================= */
-    /* Continuous Full-Width Walking Patrol (Walks X=25px to X=350px, turns, walks back) */
-    @keyframes biped-full-patrol {
-      /* Walk Right Phase (0% to 42%) */
-      0%   { transform: translateX(25px) scaleX(1); }
-      42%  { transform: translateX(350px) scaleX(1); }
+    /* Full Horizontal Travel: Starts at X=210px (safe from text), travels to extreme right X=380px, turns, and returns */
+    @keyframes biped-corridor-patrol {
+      /* Walk Forward to Extreme Right Edge (0% to 42%) */
+      0%   { transform: translateX(210px) scaleX(1); }
+      42%  { transform: translateX(380px) scaleX(1); }
 
-      /* Pause, Scan, and Smooth Turnaround at Right Edge (42% to 50%) */
-      45%  { transform: translateX(350px) scaleX(1); }
-      47%  { transform: translateX(350px) scaleX(0.1); }
-      50%  { transform: translateX(350px) scaleX(-1); }
+      /* Pause, 3D Sensor Scan, and Smooth Turnaround at Right Boundary (42% to 50%) */
+      45%  { transform: translateX(380px) scaleX(1); }
+      47%  { transform: translateX(380px) scaleX(0.1); }
+      50%  { transform: translateX(380px) scaleX(-1); }
 
-      /* Walk Left Return Phase (50% to 92%) */
-      92%  { transform: translateX(25px) scaleX(-1); }
+      /* Walk Backward Return to Left Start Base (50% to 92%) */
+      92%  { transform: translateX(210px) scaleX(-1); }
 
-      /* Pause, Scan, and Smooth Turnaround at Left Edge (92% to 100%) */
-      95%  { transform: translateX(25px) scaleX(-1); }
-      97%  { transform: translateX(25px) scaleX(-0.1); }
-      100% { transform: translateX(25px) scaleX(1); }
+      /* Pause, Diagnostics, and Smooth Turnaround at Left Base (92% to 100%) */
+      95%  { transform: translateX(210px) scaleX(-1); }
+      97%  { transform: translateX(210px) scaleX(-0.1); }
+      100% { transform: translateX(210px) scaleX(1); }
     }
     .biped-patrol-unit {
-      animation: biped-full-patrol 16s linear infinite;
+      animation: biped-corridor-patrol 14s linear infinite;
     }
 
-    /* Bipedal Leg Strides: Left Leg */
+    /* Bipedal Leg Strides: Left Leg (Hip Pivot: cx=-5, cy=4) */
     @keyframes biped-stride-left {
-      /* Walking Right (0% to 42%) - 7 Stride Cycles */
-      0%, 6%, 12%, 18%, 24%, 30%, 36%, 42% { transform: rotate(0deg); }
-      3%, 15%, 27%, 39%                     { transform: rotate(-22deg); }
-      9%, 21%, 33%                          { transform: rotate(18deg); }
+      /* Walking Forward (0% to 42%) */
+      0%, 7%, 14%, 21%, 28%, 35%, 42% { transform: rotate(0deg); }
+      3.5%, 17.5%, 31.5%              { transform: rotate(-24deg); }
+      10.5%, 24.5%, 38.5%             { transform: rotate(20deg); }
 
-      /* Standing Stance at Right Turn (42% to 50%) */
-      45%, 50%                              { transform: rotate(0deg); }
+      /* Standing Stance at Turn (42% to 50%) */
+      45%, 50%                        { transform: rotate(0deg); }
 
-      /* Walking Left (50% to 92%) - 7 Stride Cycles */
-      50%, 56%, 62%, 68%, 74%, 80%, 86%, 92% { transform: rotate(0deg); }
-      53%, 65%, 77%, 89%                     { transform: rotate(-22deg); }
-      59%, 71%, 83%                          { transform: rotate(18deg); }
+      /* Walking Return (50% to 92%) */
+      50%, 57%, 64%, 71%, 78%, 85%, 92% { transform: rotate(0deg); }
+      53.5%, 67.5%, 81.5%              { transform: rotate(-24deg); }
+      60.5%, 74.5%, 88.5%              { transform: rotate(20deg); }
 
-      /* Standing Stance at Left Base (92% to 100%) */
-      95%, 100%                             { transform: rotate(0deg); }
+      /* Standing Stance at Base (92% to 100%) */
+      95%, 100%                       { transform: rotate(0deg); }
     }
 
     /* Bipedal Leg Strides: Right Leg (Exact 180 deg Opposite Phase) */
     @keyframes biped-stride-right {
-      /* Walking Right (0% to 42%) - 7 Stride Cycles */
-      0%, 6%, 12%, 18%, 24%, 30%, 36%, 42% { transform: rotate(0deg); }
-      3%, 15%, 27%, 39%                     { transform: rotate(18deg); }
-      9%, 21%, 33%                          { transform: rotate(-22deg); }
+      /* Walking Forward (0% to 42%) */
+      0%, 7%, 14%, 21%, 28%, 35%, 42% { transform: rotate(0deg); }
+      3.5%, 17.5%, 31.5%              { transform: rotate(20deg); }
+      10.5%, 24.5%, 38.5%             { transform: rotate(-24deg); }
 
-      /* Standing Stance at Right Turn (42% to 50%) */
-      45%, 50%                              { transform: rotate(0deg); }
+      /* Standing Stance at Turn (42% to 50%) */
+      45%, 50%                        { transform: rotate(0deg); }
 
-      /* Walking Left (50% to 92%) - 7 Stride Cycles */
-      50%, 56%, 62%, 68%, 74%, 80%, 86%, 92% { transform: rotate(0deg); }
-      53%, 65%, 77%, 89%                     { transform: rotate(18deg); }
-      59%, 71%, 83%                          { transform: rotate(-22deg); }
+      /* Walking Return (50% to 92%) */
+      50%, 57%, 64%, 71%, 78%, 85%, 92% { transform: rotate(0deg); }
+      53.5%, 67.5%, 81.5%              { transform: rotate(20deg); }
+      60.5%, 74.5%, 88.5%              { transform: rotate(-24deg); }
 
-      /* Standing Stance at Left Base (92% to 100%) */
-      95%, 100%                             { transform: rotate(0deg); }
+      /* Standing Stance at Base (92% to 100%) */
+      95%, 100%                       { transform: rotate(0deg); }
     }
 
     .biped-leg-l {
       transform-origin: -5px 4px;
-      animation: biped-stride-left 16s linear infinite;
+      animation: biped-stride-left 14s linear infinite;
     }
     .biped-leg-r {
       transform-origin: 5px 4px;
-      animation: biped-stride-right 16s linear infinite;
+      animation: biped-stride-right 14s linear infinite;
     }
 
     /* Counter-Balancing Arm Swings */
     @keyframes biped-arm-swing-l {
-      0%, 6%, 12%, 18%, 24%, 30%, 36%, 42% { transform: rotate(0deg); }
-      3%, 15%, 27%, 39%                     { transform: rotate(16deg); }
-      9%, 21%, 33%                          { transform: rotate(-14deg); }
-      45%, 50%                              { transform: rotate(0deg); }
-      50%, 56%, 62%, 68%, 74%, 80%, 86%, 92% { transform: rotate(0deg); }
-      53%, 65%, 77%, 89%                     { transform: rotate(16deg); }
-      59%, 71%, 83%                          { transform: rotate(-14deg); }
-      95%, 100%                             { transform: rotate(0deg); }
+      0%, 7%, 14%, 21%, 28%, 35%, 42% { transform: rotate(0deg); }
+      3.5%, 17.5%, 31.5%              { transform: rotate(18deg); }
+      10.5%, 24.5%, 38.5%             { transform: rotate(-16deg); }
+      45%, 50%                        { transform: rotate(0deg); }
+      50%, 57%, 64%, 71%, 78%, 85%, 92% { transform: rotate(0deg); }
+      53.5%, 67.5%, 81.5%              { transform: rotate(18deg); }
+      60.5%, 74.5%, 88.5%              { transform: rotate(-16deg); }
+      95%, 100%                       { transform: rotate(0deg); }
     }
     @keyframes biped-arm-swing-r {
-      0%, 6%, 12%, 18%, 24%, 30%, 36%, 42% { transform: rotate(0deg); }
-      3%, 15%, 27%, 39%                     { transform: rotate(-14deg); }
-      9%, 21%, 33%                          { transform: rotate(16deg); }
-      45%, 50%                              { transform: rotate(0deg); }
-      50%, 56%, 62%, 68%, 74%, 80%, 86%, 92% { transform: rotate(0deg); }
-      53%, 65%, 77%, 89%                     { transform: rotate(-14deg); }
-      59%, 71%, 83%                          { transform: rotate(16deg); }
-      95%, 100%                             { transform: rotate(0deg); }
+      0%, 7%, 14%, 21%, 28%, 35%, 42% { transform: rotate(0deg); }
+      3.5%, 17.5%, 31.5%              { transform: rotate(-16deg); }
+      10.5%, 24.5%, 38.5%             { transform: rotate(18deg); }
+      45%, 50%                        { transform: rotate(0deg); }
+      50%, 57%, 64%, 71%, 78%, 85%, 92% { transform: rotate(0deg); }
+      53.5%, 67.5%, 81.5%              { transform: rotate(-16deg); }
+      60.5%, 74.5%, 88.5%              { transform: rotate(18deg); }
+      95%, 100%                       { transform: rotate(0deg); }
     }
 
     .biped-arm-l {
       transform-origin: -11px -10px;
-      animation: biped-arm-swing-l 16s linear infinite;
+      animation: biped-arm-swing-l 14s linear infinite;
     }
     .biped-arm-r {
       transform-origin: 11px -10px;
-      animation: biped-arm-swing-r 16s linear infinite;
+      animation: biped-arm-swing-r 14s linear infinite;
     }
 
-    /* Torso Walking Heave and Reactor Glow */
+    /* Body Walking Heave (Vertical Bounce on Each Step) */
     @keyframes biped-body-heave {
-      0%, 3%, 6%, 9%, 12%, 15%, 18%, 21%, 24%, 27%, 30%, 33%, 36%, 39%, 42%,
-      50%, 53%, 56%, 59%, 62%, 65%, 68%, 71%, 74%, 77%, 80%, 83%, 86%, 89%, 92%, 100% { transform: translateY(0px); }
-      1.5%, 4.5%, 7.5%, 10.5%, 13.5%, 16.5%, 19.5%, 22.5%, 25.5%, 28.5%, 31.5%, 34.5%, 37.5%, 40.5%,
-      51.5%, 54.5%, 57.5%, 60.5%, 63.5%, 66.5%, 69.5%, 72.5%, 75.5%, 78.5%, 81.5%, 84.5%, 87.5%, 90.5% { transform: translateY(-2px); }
+      0%, 3.5%, 7%, 10.5%, 14%, 17.5%, 21%, 24.5%, 28%, 31.5%, 35%, 38.5%, 42%,
+      50%, 53.5%, 57%, 60.5%, 64%, 67.5%, 71%, 74.5%, 78%, 81.5%, 85%, 88.5%, 92%, 100% { transform: translateY(0px); }
+      1.75%, 5.25%, 8.75%, 12.25%, 15.75%, 19.25%, 22.75%, 26.25%, 29.75%, 33.25%, 36.75%, 40.25%,
+      51.75%, 55.25%, 58.75%, 62.25%, 65.75%, 69.25%, 72.75%, 76.25%, 79.75%, 83.25%, 86.75%, 90.25% { transform: translateY(-2.2px); }
     }
     .biped-torso-anim {
       transform-origin: 0px 4px;
-      animation: biped-body-heave 16s linear infinite;
+      animation: biped-body-heave 14s linear infinite;
     }
 
-    /* Core Reactor Glow Pulse */
+    /* Reactor Core Glow Pulse */
     @keyframes core-pulse-glow {
       0%, 100% { opacity: 0.7; transform: scale(1); }
       50%      { opacity: 1; transform: scale(1.15); }
@@ -223,7 +223,7 @@
       animation: core-pulse-glow 2s ease-in-out infinite;
     }
 
-    /* Visor Scan Line Sweep */
+    /* Optical Visor Sensor Pulse */
     @keyframes visor-scan-anim {
       0%, 100% { opacity: 0.6; }
       50%      { opacity: 1; stroke-width: 2.2px; }
@@ -405,25 +405,26 @@
       </g>
     </g>
 
-    <!-- Bottom Mission Callout and Full-Width Autonomous Patrol Runway -->
+    <!-- Bottom Mission Callout and Full-Width Autonomous Patrol Section -->
     <g transform="translate(24, 255)">
       <!-- Top Dividing Line -->
       <line x1="0" y1="0" x2="380" y2="0" stroke="#38BDF8" stroke-opacity="0.2" stroke-width="1"/>
       
-      <!-- Clean Typography (Positioned safely above the runway) -->
-      <text x="0" y="15" font-family="'SF Mono', 'Fira Code', monospace" font-size="8.5" font-weight="700" fill="#93C5FD" letter-spacing="1">MAKE THE NEXT MOVE.</text>
-      <text x="0" y="31" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="900" fill="#F4F6FC">Autonomous Systems &amp; Aerial Engineering</text>
-      <text x="0" y="44" font-family="-apple-system, sans-serif" font-size="9.5" fill="#93C5FD">A clearer vision. A stronger autonomous stack.</text>
+      <!-- Compact Clean Left Typography (Width: 175px, leaves X=200px to X=390px completely open!) -->
+      <text x="0" y="16" font-family="'SF Mono', 'Fira Code', monospace" font-size="8.5" font-weight="700" fill="#93C5FD" letter-spacing="1">MAKE THE NEXT MOVE.</text>
+      <text x="0" y="34" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="900" fill="#F4F6FC">Autonomous Systems</text>
+      <text x="0" y="50" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="900" fill="#F4F6FC">&amp; Aerial Engineering</text>
+      <text x="0" y="66" font-family="-apple-system, sans-serif" font-size="9" fill="#93C5FD">A clearer vision. A stronger stack.</text>
 
-      <!-- Full-Width Waypoint Floor Runway Track (X=10 to X=370) -->
-      <line x1="10" y1="78" x2="370" y2="78" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="4 3"/>
-      <circle cx="15" cy="78" r="1.5" fill="#38BDF8" opacity="0.7"/>
-      <circle cx="365" cy="78" r="1.5" fill="#38BDF8" opacity="0.7"/>
-      <text x="370" y="75" text-anchor="end" font-family="'SF Mono', monospace" font-size="6" font-weight="800" fill="#38BDF8" letter-spacing="0.5">PATROL RUNWAY // 310m</text>
+      <!-- Full Runway Guidance Track from Starting Point (X=200) to Extreme Right Edge (X=390) -->
+      <line x1="195" y1="74" x2="395" y2="74" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="4 3"/>
+      <circle cx="205" cy="74" r="1.5" fill="#38BDF8" opacity="0.8"/>
+      <circle cx="390" cy="74" r="1.5" fill="#38BDF8" opacity="0.8"/>
+      <text x="390" y="69" text-anchor="end" font-family="'SF Mono', monospace" font-size="6" font-weight="800" fill="#38BDF8" letter-spacing="0.5">AUTONOMOUS PATROL ZONE</text>
 
-      <!-- ================= ADVANCED AUTONOMOUS BIPEDAL ROBOT (FULL-WIDTH CONTINUOUS PATROL) ================= -->
-      <g id="autonomous-biped-robot" transform="translate(0, 48)">
-        <!-- Entire Robot Moves along the Runway Corridor (Walks 25px -> 350px -> 25px) -->
+      <!-- ================= ADVANCED 3D AUTONOMOUS BIPEDAL ROBOT ================= -->
+      <g id="autonomous-biped-robot" transform="translate(0, 44)">
+        <!-- Entire Robot Travels across Full Available Distance: Starts X=210px -> Walks to Extreme Right X=380px -> Returns -->
         <g class="biped-patrol-unit">
           <!-- Contact Ground Shadow beneath feet -->
           <ellipse cx="0" cy="30" rx="14" ry="3" fill="#01040A" opacity="0.5"/>
@@ -441,12 +442,12 @@
               <circle cx="-8" cy="16" r="2.8" fill="#0F172A" stroke="#38BDF8" stroke-width="0.8"/>
               <!-- Shin Armature -->
               <line x1="-8" y1="16" x2="-4" y2="28" stroke="#1E293B" stroke-width="2.6" stroke-linecap="round"/>
-              <!-- Ankle & Foot -->
+              <!-- Ankle and Foot -->
               <circle cx="-4" cy="28" r="1.8" fill="#334155"/>
               <path d="M -9 30 L 2 30 L 0 28 L -7 28 Z" fill="#0F172A" stroke="#38BDF8" stroke-width="0.7"/>
             </g>
 
-            <!-- ================= TORSO & SENSOR VISOR ================= -->
+            <!-- ================= TORSO AND SENSOR VISOR ================= -->
             <!-- Waist Gimbal -->
             <path d="M -8 2 L 8 2 L 6 7 L -6 7 Z" fill="#0F172A" stroke="#334155" stroke-width="1"/>
             
@@ -501,7 +502,7 @@
               <circle cx="9" cy="16" r="1.2" fill="#FF354F"/>
               <!-- Shin Armature -->
               <line x1="9" y1="16" x2="5" y2="28" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
-              <!-- Ankle & Foot -->
+              <!-- Ankle and Foot -->
               <circle cx="5" cy="28" r="2.2" fill="#0F172A" stroke="#38BDF8" stroke-width="0.8"/>
               <path d="M 0 30 L 11 30 L 9 28 L 2 28 Z" fill="#0F172A" stroke="#38BDF8" stroke-width="0.9"/>
               <circle cx="10" cy="29" r="1" fill="#38BDF8"/>
