@@ -27,13 +27,21 @@
       <rect x="0" y="0" width="115" height="135" rx="10"/>
     </clipPath>
   
-    <!-- Walking Robot Metallic Gradients -->
-    <linearGradient id="robot-chassis-metal" x1="0%" y1="0%" x2="100%" y2="100%">
+    
+    <!-- Advanced Bipedal Robot Titanium Gradients -->
+    <linearGradient id="mech-torso-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#38BDF8"/>
-      <stop offset="30%" stop-color="#1E293B"/>
+      <stop offset="25%" stop-color="#1E293B"/>
       <stop offset="70%" stop-color="#0F172A"/>
       <stop offset="100%" stop-color="#0284C7"/>
     </linearGradient>
+
+    <radialGradient id="mech-reactor-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#1D4ED8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#080F1E" stop-opacity="0"/>
+    </radialGradient>
+
 
     <linearGradient id="headlight-beam" x1="0%" y1="0%" x2="100%" y2="50%">
       <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8"/>
@@ -91,132 +99,137 @@
     .prog-3 { animation: bar-prog-3 12s infinite; }
 
     
-    /* ================= REALISTIC AUTONOMOUS ROBOT WALKING PATROL ================= */
-    /* Horizontal Ground Patrol Corridor (Walks 0px to 40px and returns) */
-    @keyframes robot-patrol-corridor {
-      0%   { transform: translateX(0px); }
-      35%  { transform: translateX(40px); }
-      48%  { transform: translateX(40px); }
-      83%  { transform: translateX(0px); }
-      100% { transform: translateX(0px); }
+    /* ================= ADVANCED AUTONOMOUS BIPEDAL ROBOT PATROL ================= */
+    /* Continuous Full-Width Walking Patrol (Walks X=25px to X=350px, turns, walks back) */
+    @keyframes biped-full-patrol {
+      /* Walk Right Phase (0% to 42%) */
+      0%   { transform: translateX(25px) scaleX(1); }
+      42%  { transform: translateX(350px) scaleX(1); }
+
+      /* Pause, Scan, and Smooth Turnaround at Right Edge (42% to 50%) */
+      45%  { transform: translateX(350px) scaleX(1); }
+      47%  { transform: translateX(350px) scaleX(0.1); }
+      50%  { transform: translateX(350px) scaleX(-1); }
+
+      /* Walk Left Return Phase (50% to 92%) */
+      92%  { transform: translateX(25px) scaleX(-1); }
+
+      /* Pause, Scan, and Smooth Turnaround at Left Edge (92% to 100%) */
+      95%  { transform: translateX(25px) scaleX(-1); }
+      97%  { transform: translateX(25px) scaleX(-0.1); }
+      100% { transform: translateX(25px) scaleX(1); }
     }
-    .robot-patrol-corridor {
-      animation: robot-patrol-corridor 11s ease-in-out infinite;
-    }
-
-    /* Coordinated Trot Walking Gait: Diagonal Pair 1 (FR and RL) */
-    @keyframes trot-gait-pair-1 {
-      /* Walk Forward Phase (0% to 35%) */
-      0%   { transform: rotate(0deg); }
-      5%   { transform: rotate(-14deg); }
-      10%  { transform: rotate(12deg); }
-      15%  { transform: rotate(-14deg); }
-      20%  { transform: rotate(12deg); }
-      25%  { transform: rotate(-14deg); }
-      30%  { transform: rotate(12deg); }
-      35%  { transform: rotate(0deg); }
-
-      /* Pause and Scan at Turnaround (35% to 48%) */
-      48%  { transform: rotate(0deg); }
-
-      /* Walk Backward Return Phase (48% to 83%) */
-      53%  { transform: rotate(12deg); }
-      58%  { transform: rotate(-14deg); }
-      63%  { transform: rotate(12deg); }
-      68%  { transform: rotate(-14deg); }
-      73%  { transform: rotate(12deg); }
-      78%  { transform: rotate(-14deg); }
-      83%  { transform: rotate(0deg); }
-
-      /* Pause at Home Base (83% to 100%) */
-      100% { transform: rotate(0deg); }
+    .biped-patrol-unit {
+      animation: biped-full-patrol 16s linear infinite;
     }
 
-    /* Coordinated Trot Walking Gait: Diagonal Pair 2 (FL and RR - Exact Opposite Phase) */
-    @keyframes trot-gait-pair-2 {
-      /* Walk Forward Phase (0% to 35%) */
-      0%   { transform: rotate(0deg); }
-      5%   { transform: rotate(12deg); }
-      10%  { transform: rotate(-14deg); }
-      15%  { transform: rotate(12deg); }
-      20%  { transform: rotate(-14deg); }
-      25%  { transform: rotate(12deg); }
-      30%  { transform: rotate(-14deg); }
-      35%  { transform: rotate(0deg); }
+    /* Bipedal Leg Strides: Left Leg */
+    @keyframes biped-stride-left {
+      /* Walking Right (0% to 42%) - 7 Stride Cycles */
+      0%, 6%, 12%, 18%, 24%, 30%, 36%, 42% { transform: rotate(0deg); }
+      3%, 15%, 27%, 39%                     { transform: rotate(-22deg); }
+      9%, 21%, 33%                          { transform: rotate(18deg); }
 
-      /* Pause and Scan at Turnaround (35% to 48%) */
-      48%  { transform: rotate(0deg); }
+      /* Standing Stance at Right Turn (42% to 50%) */
+      45%, 50%                              { transform: rotate(0deg); }
 
-      /* Walk Backward Return Phase (48% to 83%) */
-      53%  { transform: rotate(-14deg); }
-      58%  { transform: rotate(12deg); }
-      63%  { transform: rotate(-14deg); }
-      68%  { transform: rotate(12deg); }
-      73%  { transform: rotate(-14deg); }
-      78%  { transform: rotate(12deg); }
-      83%  { transform: rotate(0deg); }
+      /* Walking Left (50% to 92%) - 7 Stride Cycles */
+      50%, 56%, 62%, 68%, 74%, 80%, 86%, 92% { transform: rotate(0deg); }
+      53%, 65%, 77%, 89%                     { transform: rotate(-22deg); }
+      59%, 71%, 83%                          { transform: rotate(18deg); }
 
-      /* Pause at Home Base (83% to 100%) */
-      100% { transform: rotate(0deg); }
+      /* Standing Stance at Left Base (92% to 100%) */
+      95%, 100%                             { transform: rotate(0deg); }
     }
 
-    .leg-fr-walk, .leg-rl-walk {
-      transform-origin: 0px 0px;
-      animation: trot-gait-pair-1 11s ease-in-out infinite;
-    }
-    .leg-fl-walk, .leg-rr-walk {
-      transform-origin: 0px 0px;
-      animation: trot-gait-pair-2 11s ease-in-out infinite;
+    /* Bipedal Leg Strides: Right Leg (Exact 180 deg Opposite Phase) */
+    @keyframes biped-stride-right {
+      /* Walking Right (0% to 42%) - 7 Stride Cycles */
+      0%, 6%, 12%, 18%, 24%, 30%, 36%, 42% { transform: rotate(0deg); }
+      3%, 15%, 27%, 39%                     { transform: rotate(18deg); }
+      9%, 21%, 33%                          { transform: rotate(-22deg); }
+
+      /* Standing Stance at Right Turn (42% to 50%) */
+      45%, 50%                              { transform: rotate(0deg); }
+
+      /* Walking Left (50% to 92%) - 7 Stride Cycles */
+      50%, 56%, 62%, 68%, 74%, 80%, 86%, 92% { transform: rotate(0deg); }
+      53%, 65%, 77%, 89%                     { transform: rotate(18deg); }
+      59%, 71%, 83%                          { transform: rotate(-22deg); }
+
+      /* Standing Stance at Left Base (92% to 100%) */
+      95%, 100%                             { transform: rotate(0deg); }
     }
 
-    /* Body Walking Heave (Bobs vertically only when legs are walking) */
-    @keyframes robot-walk-heave {
-      0%, 10%, 20%, 30%, 35%, 48%, 58%, 68%, 78%, 83%, 100% { transform: translateY(0px); }
-      5%, 15%, 25%, 53%, 63%, 73%                          { transform: translateY(-2.2px); }
+    .biped-leg-l {
+      transform-origin: -5px 4px;
+      animation: biped-stride-left 16s linear infinite;
     }
-    .robot-body-heave {
+    .biped-leg-r {
+      transform-origin: 5px 4px;
+      animation: biped-stride-right 16s linear infinite;
+    }
+
+    /* Counter-Balancing Arm Swings */
+    @keyframes biped-arm-swing-l {
+      0%, 6%, 12%, 18%, 24%, 30%, 36%, 42% { transform: rotate(0deg); }
+      3%, 15%, 27%, 39%                     { transform: rotate(16deg); }
+      9%, 21%, 33%                          { transform: rotate(-14deg); }
+      45%, 50%                              { transform: rotate(0deg); }
+      50%, 56%, 62%, 68%, 74%, 80%, 86%, 92% { transform: rotate(0deg); }
+      53%, 65%, 77%, 89%                     { transform: rotate(16deg); }
+      59%, 71%, 83%                          { transform: rotate(-14deg); }
+      95%, 100%                             { transform: rotate(0deg); }
+    }
+    @keyframes biped-arm-swing-r {
+      0%, 6%, 12%, 18%, 24%, 30%, 36%, 42% { transform: rotate(0deg); }
+      3%, 15%, 27%, 39%                     { transform: rotate(-14deg); }
+      9%, 21%, 33%                          { transform: rotate(16deg); }
+      45%, 50%                              { transform: rotate(0deg); }
+      50%, 56%, 62%, 68%, 74%, 80%, 86%, 92% { transform: rotate(0deg); }
+      53%, 65%, 77%, 89%                     { transform: rotate(-14deg); }
+      59%, 71%, 83%                          { transform: rotate(16deg); }
+      95%, 100%                             { transform: rotate(0deg); }
+    }
+
+    .biped-arm-l {
+      transform-origin: -11px -10px;
+      animation: biped-arm-swing-l 16s linear infinite;
+    }
+    .biped-arm-r {
+      transform-origin: 11px -10px;
+      animation: biped-arm-swing-r 16s linear infinite;
+    }
+
+    /* Torso Walking Heave and Reactor Glow */
+    @keyframes biped-body-heave {
+      0%, 3%, 6%, 9%, 12%, 15%, 18%, 21%, 24%, 27%, 30%, 33%, 36%, 39%, 42%,
+      50%, 53%, 56%, 59%, 62%, 65%, 68%, 71%, 74%, 77%, 80%, 83%, 86%, 89%, 92%, 100% { transform: translateY(0px); }
+      1.5%, 4.5%, 7.5%, 10.5%, 13.5%, 16.5%, 19.5%, 22.5%, 25.5%, 28.5%, 31.5%, 34.5%, 37.5%, 40.5%,
+      51.5%, 54.5%, 57.5%, 60.5%, 63.5%, 66.5%, 69.5%, 72.5%, 75.5%, 78.5%, 81.5%, 84.5%, 87.5%, 90.5% { transform: translateY(-2px); }
+    }
+    .biped-torso-anim {
       transform-origin: 0px 4px;
-      animation: robot-walk-heave 11s ease-in-out infinite;
+      animation: biped-body-heave 16s linear infinite;
     }
 
-    /* Multispectral Head Scan when Paused */
-    @keyframes robot-head-scan {
-      0%, 35%  { transform: rotate(0deg); }
-      38%      { transform: rotate(-4deg); }
-      42%      { transform: rotate(3deg); }
-      45%      { transform: rotate(-2deg); }
-      48%, 100% { transform: rotate(0deg); }
+    /* Core Reactor Glow Pulse */
+    @keyframes core-pulse-glow {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50%      { opacity: 1; transform: scale(1.15); }
     }
-    .robot-head-scan {
-      transform-origin: 0px 0px;
-      animation: robot-head-scan 11s ease-in-out infinite;
+    .core-reactor-pulse {
+      transform-origin: 0px -5px;
+      animation: core-pulse-glow 2s ease-in-out infinite;
     }
 
-    /* LIDAR Laser Sweep Pulse */
-    @keyframes robot-lidar-sweep {
-      0%, 100% { opacity: 0.35; }
-      50%      { opacity: 1; }
+    /* Visor Scan Line Sweep */
+    @keyframes visor-scan-anim {
+      0%, 100% { opacity: 0.6; }
+      50%      { opacity: 1; stroke-width: 2.2px; }
     }
-    .robot-lidar-sweep {
-      animation: robot-lidar-sweep 0.6s ease-in-out infinite;
-    }
-
-    /* Dynamic Foot Contact Shadows */
-    @keyframes foot-shadow-dyn-1 {
-      0%, 10%, 20%, 30%, 35%, 48%, 58%, 68%, 78%, 83%, 100% { transform: scale(1); opacity: 0.45; }
-      5%, 15%, 25%, 53%, 63%, 73%                          { transform: scale(0.7); opacity: 0.15; }
-    }
-    @keyframes foot-shadow-dyn-2 {
-      0%, 10%, 20%, 30%, 35%, 48%, 58%, 68%, 78%, 83%, 100% { transform: scale(0.7); opacity: 0.15; }
-      5%, 15%, 25%, 53%, 63%, 73%                          { transform: scale(1); opacity: 0.45; }
-    }
-    .foot-shadow-p1 {
-      transform-origin: center;
-      animation: foot-shadow-dyn-1 11s ease-in-out infinite;
-    }
-    .foot-shadow-p2 {
-      transform-origin: center;
-      animation: foot-shadow-dyn-2 11s ease-in-out infinite;
+    .visor-scan {
+      animation: visor-scan-anim 1.2s ease-in-out infinite;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -392,96 +405,107 @@
       </g>
     </g>
 
-    <!-- Bottom Mission Callout (NO OVERLAP) -->
+    <!-- Bottom Mission Callout and Full-Width Autonomous Patrol Runway -->
     <g transform="translate(24, 255)">
+      <!-- Top Dividing Line -->
       <line x1="0" y1="0" x2="380" y2="0" stroke="#38BDF8" stroke-opacity="0.2" stroke-width="1"/>
-      <text x="0" y="18" font-family="'SF Mono', monospace" font-size="9" font-weight="700" fill="#93C5FD" letter-spacing="1">MAKE THE NEXT MOVE.</text>
-      <text x="0" y="40" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="900" fill="#F4F6FC">Autonomous Systems &amp; Aerial Engineering</text>
-      <text x="0" y="58" font-family="-apple-system, sans-serif" font-size="11" fill="#93C5FD">A clearer vision. A stronger autonomous stack.</text>
-    
-      <!-- ================= 3D AUTONOMOUS WALKING QUADRUPED ROBOT ================= -->
-      <g id="autonomous-quadruped-robot" transform="translate(285, 36)">
-        <!-- Robot Ground Patrol Movement Corridor (Walks 0px to 40px and returns) -->
-        <g class="robot-patrol-corridor">
-          <!-- Waypoint Guidance Floor Track -->
-          <line x1="-38" y1="32" x2="48" y2="32" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="3 3"/>
-          <circle cx="-32" cy="32" r="1.2" fill="#38BDF8" opacity="0.6"/>
-          <circle cx="42" cy="32" r="1.2" fill="#38BDF8" opacity="0.6"/>
+      
+      <!-- Clean Typography (Positioned safely above the runway) -->
+      <text x="0" y="15" font-family="'SF Mono', 'Fira Code', monospace" font-size="8.5" font-weight="700" fill="#93C5FD" letter-spacing="1">MAKE THE NEXT MOVE.</text>
+      <text x="0" y="31" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="900" fill="#F4F6FC">Autonomous Systems &amp; Aerial Engineering</text>
+      <text x="0" y="44" font-family="-apple-system, sans-serif" font-size="9.5" fill="#93C5FD">A clearer vision. A stronger autonomous stack.</text>
 
-          <!-- Dynamic Contact Foot Shadows -->
-          <g class="r-shadow-track">
-            <ellipse cx="-18" cy="32" rx="4.5" ry="1.6" fill="#020617" class="foot-shadow-p1"/>
-            <ellipse cx="-8" cy="32" rx="4.5" ry="1.6" fill="#020617" class="foot-shadow-p2"/>
-            <ellipse cx="14" cy="32" rx="4.5" ry="1.6" fill="#020617" class="foot-shadow-p2"/>
-            <ellipse cx="24" cy="32" rx="4.5" ry="1.6" fill="#020617" class="foot-shadow-p1"/>
-            <ellipse cx="0" cy="32" rx="30" ry="4.5" fill="#080F1E" opacity="0.5"/>
-          </g>
+      <!-- Full-Width Waypoint Floor Runway Track (X=10 to X=370) -->
+      <line x1="10" y1="78" x2="370" y2="78" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="4 3"/>
+      <circle cx="15" cy="78" r="1.5" fill="#38BDF8" opacity="0.7"/>
+      <circle cx="365" cy="78" r="1.5" fill="#38BDF8" opacity="0.7"/>
+      <text x="370" y="75" text-anchor="end" font-family="'SF Mono', monospace" font-size="6" font-weight="800" fill="#38BDF8" letter-spacing="0.5">PATROL RUNWAY // 310m</text>
 
-          <!-- ================= BACKGROUND LEGS (FL, RL) ================= -->
-          <!-- Rear-Left Leg (Background, Diagonal Pair 1) -->
-          <g transform="translate(-18, 6)" class="leg-rl-walk">
-            <circle cx="0" cy="0" r="4.2" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
-            <line x1="0" y1="0" x2="-8" y2="13" stroke="#1E293B" stroke-width="3.2" stroke-linecap="round"/>
-            <line x1="0" y1="0" x2="-8" y2="13" stroke="#334155" stroke-width="1" stroke-linecap="round"/>
-            <circle cx="-8" cy="13" r="2.6" fill="#0F172A" stroke="#334155" stroke-width="0.8"/>
-            <line x1="-8" y1="13" x2="-3" y2="26" stroke="#334155" stroke-width="2.2" stroke-linecap="round"/>
-            <circle cx="-3" cy="26" r="2" fill="#020617"/>
-          </g>
+      <!-- ================= ADVANCED AUTONOMOUS BIPEDAL ROBOT (FULL-WIDTH CONTINUOUS PATROL) ================= -->
+      <g id="autonomous-biped-robot" transform="translate(0, 48)">
+        <!-- Entire Robot Moves along the Runway Corridor (Walks 25px -> 350px -> 25px) -->
+        <g class="biped-patrol-unit">
+          <!-- Contact Ground Shadow beneath feet -->
+          <ellipse cx="0" cy="30" rx="14" ry="3" fill="#01040A" opacity="0.5"/>
 
-          <!-- Front-Left Leg (Background, Diagonal Pair 2) -->
-          <g transform="translate(16, 6)" class="leg-fl-walk">
-            <circle cx="0" cy="0" r="4.2" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
-            <line x1="0" y1="0" x2="8" y2="13" stroke="#1E293B" stroke-width="3.2" stroke-linecap="round"/>
-            <line x1="0" y1="0" x2="8" y2="13" stroke="#334155" stroke-width="1" stroke-linecap="round"/>
-            <circle cx="8" cy="13" r="2.6" fill="#0F172A" stroke="#334155" stroke-width="0.8"/>
-            <line x1="8" y1="13" x2="13" y2="26" stroke="#334155" stroke-width="2.2" stroke-linecap="round"/>
-            <circle cx="13" cy="26" r="2" fill="#020617"/>
-          </g>
-
-          <!-- ================= MAIN ROBOT CHASSIS & PERCEPTION HEAD ================= -->
-          <g class="robot-body-heave">
-            <path d="M -26 2 L -20 -8 L 18 -8 L 28 -2 L 26 9 L 18 12 L -20 12 L -26 8 Z" fill="url(#robot-chassis-metal)" stroke="#38BDF8" stroke-width="1.2"/>
-            <path d="M -18 -5 L 14 -5 L 22 -1 L 15 9 L -18 9 Z" fill="#0A1326" stroke="#1E293B" stroke-width="0.8"/>
-            <path d="M -14 -8 L -14 -11 L 12 -11 L 12 -8" fill="none" stroke="#475569" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="-12" y1="2" x2="4" y2="2" stroke="#38BDF8" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="8" y1="2" x2="12" y2="2" stroke="#10B981" stroke-width="1.6" stroke-linecap="round"/>
-            <text x="-6" y="7" font-family="'SF Mono', 'Fira Code', monospace" font-size="4.5" font-weight="900" fill="#93C5FD" letter-spacing="0.6">AGV-04</text>
-
-            <!-- Multispectral Sensor Head Turret (Front) -->
-            <g transform="translate(26, -2)" class="robot-head-scan">
-              <path d="M 0 -4 L 7 -2 L 7 4 L 0 6 Z" fill="#080F1E" stroke="#38BDF8" stroke-width="0.9"/>
-              <rect x="1" y="-7.5" width="5.5" height="4" rx="1" fill="#0F172A" stroke="#38BDF8" stroke-width="0.8"/>
-              <line x1="1.5" y1="-5.5" x2="5.5" y2="-5.5" stroke="#38BDF8" stroke-width="1" class="robot-lidar-sweep"/>
-              <circle cx="5.5" cy="0.8" r="2" fill="#1D4ED8" stroke="#38BDF8" stroke-width="0.6"/>
-              <circle cx="5.5" cy="0.8" r="0.9" fill="#FFFFFF"/>
-              <circle cx="3.5" cy="3.5" r="1.2" fill="#38BDF8"/>
-              <polygon points="5,3.5 26,11 24,20 5,4.5" fill="url(#headlight-beam)" opacity="0.45"/>
+          <!-- Body Walking Heave Group -->
+          <g class="biped-torso-anim">
+            <!-- ================= BACKGROUND LEG (Left Leg) ================= -->
+            <g class="biped-leg-l">
+              <circle cx="-5" cy="4" r="3.8" fill="#1E293B" stroke="#0F172A" stroke-width="1"/>
+              <circle cx="-5" cy="4" r="1.5" fill="#38BDF8"/>
+              <!-- Thigh Armature -->
+              <line x1="-5" y1="4" x2="-8" y2="16" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+              <line x1="-3" y1="6" x2="-6" y2="15" stroke="#64748B" stroke-width="1.2" stroke-linecap="round"/>
+              <!-- Knee Joint -->
+              <circle cx="-8" cy="16" r="2.8" fill="#0F172A" stroke="#38BDF8" stroke-width="0.8"/>
+              <!-- Shin Armature -->
+              <line x1="-8" y1="16" x2="-4" y2="28" stroke="#1E293B" stroke-width="2.6" stroke-linecap="round"/>
+              <!-- Ankle & Foot -->
+              <circle cx="-4" cy="28" r="1.8" fill="#334155"/>
+              <path d="M -9 30 L 2 30 L 0 28 L -7 28 Z" fill="#0F172A" stroke="#38BDF8" stroke-width="0.7"/>
             </g>
-          </g>
 
-          <!-- ================= FOREGROUND LEGS (FR, RR) ================= -->
-          <!-- Rear-Right Leg (Foreground, Diagonal Pair 2) -->
-          <g transform="translate(-14, 7)" class="leg-rr-walk">
-            <circle cx="0" cy="0" r="5" fill="#1E293B" stroke="#38BDF8" stroke-width="1.2"/>
-            <circle cx="0" cy="0" r="2.2" fill="#0284C7"/>
-            <line x1="0" y1="0" x2="-9" y2="14" stroke="#334155" stroke-width="3.6" stroke-linecap="round"/>
-            <line x1="0" y1="0" x2="-9" y2="14" stroke="#64748B" stroke-width="1.2" stroke-linecap="round"/>
-            <circle cx="-9" cy="14" r="3.2" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
-            <circle cx="-9" cy="14" r="1.2" fill="#FF354F"/>
-            <line x1="-9" y1="14" x2="-3" y2="25" stroke="#475569" stroke-width="2.6" stroke-linecap="round"/>
-            <circle cx="-3" cy="25" r="2.5" fill="#0F172A" stroke="#38BDF8" stroke-width="0.8"/>
-          </g>
+            <!-- ================= TORSO & SENSOR VISOR ================= -->
+            <!-- Waist Gimbal -->
+            <path d="M -8 2 L 8 2 L 6 7 L -6 7 Z" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+            
+            <!-- Heavy-Duty Monocoque Chest Chassis -->
+            <path d="M -11 -12 L 11 -12 L 14 -3 L 8 2 L -8 2 L -14 -3 Z" fill="url(#mech-torso-grad)" stroke="#38BDF8" stroke-width="1.2"/>
+            <line x1="-9" y1="-10" x2="9" y2="-10" stroke="#BAE6FD" stroke-width="1" opacity="0.8"/>
+            
+            <!-- Glowing Arc Power Reactor Core -->
+            <circle cx="0" cy="-5" r="3.2" fill="#080F1E" stroke="#38BDF8" stroke-width="1"/>
+            <circle cx="0" cy="-5" r="1.8" fill="#38BDF8" class="core-reactor-pulse"/>
 
-          <!-- Front-Right Leg (Foreground, Diagonal Pair 1) -->
-          <g transform="translate(20, 7)" class="leg-fr-walk">
-            <circle cx="0" cy="0" r="5" fill="#1E293B" stroke="#38BDF8" stroke-width="1.2"/>
-            <circle cx="0" cy="0" r="2.2" fill="#0284C7"/>
-            <line x1="0" y1="0" x2="6" y2="14" stroke="#334155" stroke-width="3.6" stroke-linecap="round"/>
-            <line x1="0" y1="0" x2="6" y2="14" stroke="#64748B" stroke-width="1.2" stroke-linecap="round"/>
-            <circle cx="6" cy="14" r="3.2" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
-            <circle cx="6" cy="14" r="1.2" fill="#10B981"/>
-            <line x1="6" y1="14" x2="11" y2="25" stroke="#475569" stroke-width="2.6" stroke-linecap="round"/>
-            <circle cx="11" cy="25" r="2.5" fill="#0F172A" stroke="#38BDF8" stroke-width="0.8"/>
+            <!-- Left Arm / Manipulator (Background Counter-Swing) -->
+            <g class="biped-arm-l">
+              <circle cx="-11" cy="-10" r="2.8" fill="#1E293B" stroke="#0F172A" stroke-width="0.8"/>
+              <line x1="-11" y1="-10" x2="-15" y2="-2" stroke="#334155" stroke-width="2.2" stroke-linecap="round"/>
+              <circle cx="-15" cy="-2" r="1.8" fill="#0F172A"/>
+              <line x1="-15" y1="-2" x2="-12" y2="6" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M -13 6 L -10 9 M -13 6 L -14 9" stroke="#38BDF8" stroke-width="1" stroke-linecap="round"/>
+            </g>
+
+            <!-- Perception Visor Head / Turret -->
+            <g transform="translate(0, -14)">
+              <path d="M -7 0 L 7 0 L 6 -6 L -6 -6 Z" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
+              <!-- Cyan Horizontal Optical Visor -->
+              <line x1="-5" y1="-3" x2="5" y2="-3" stroke="#38BDF8" stroke-width="1.8" stroke-linecap="round" class="visor-scan"/>
+              <!-- Top LIDAR Sensor Puck -->
+              <rect x="-3" y="-8.5" width="6" height="2.5" rx="0.6" fill="#1E293B" stroke="#38BDF8" stroke-width="0.7"/>
+              <circle cx="0" cy="-7.2" r="0.8" fill="#FF354F"/>
+            </g>
+
+            <!-- Right Arm / Manipulator (Foreground Counter-Swing) -->
+            <g class="biped-arm-r">
+              <circle cx="11" cy="-10" r="3" fill="#334155" stroke="#38BDF8" stroke-width="1"/>
+              <line x1="11" y1="-10" x2="16" y2="-1" stroke="#475569" stroke-width="2.6" stroke-linecap="round"/>
+              <circle cx="16" cy="-1" r="2" fill="#0F172A" stroke="#38BDF8" stroke-width="0.7"/>
+              <line x1="16" y1="-1" x2="12" y2="7" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
+              <path d="M 12 7 L 15 10 M 12 7 L 10 10" stroke="#38BDF8" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="12" cy="7" r="1" fill="#10B981"/>
+            </g>
+
+            <!-- ================= FOREGROUND LEG (Right Leg) ================= -->
+            <g class="biped-leg-r">
+              <circle cx="5" cy="4" r="4.5" fill="#1E293B" stroke="#38BDF8" stroke-width="1.2"/>
+              <circle cx="5" cy="4" r="2" fill="#0EA5E9"/>
+              <!-- Thigh Armature with Truss -->
+              <line x1="5" y1="4" x2="9" y2="16" stroke="#334155" stroke-width="3.8" stroke-linecap="round"/>
+              <line x1="5" y1="4" x2="9" y2="16" stroke="#64748B" stroke-width="1.2" stroke-linecap="round"/>
+              <!-- Hydraulic Cylinder -->
+              <line x1="3" y1="6" x2="7" y2="15" stroke="#94A3B8" stroke-width="1.2" stroke-linecap="round"/>
+              <!-- Knee Joint -->
+              <circle cx="9" cy="16" r="3.2" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
+              <circle cx="9" cy="16" r="1.2" fill="#FF354F"/>
+              <!-- Shin Armature -->
+              <line x1="9" y1="16" x2="5" y2="28" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+              <!-- Ankle & Foot -->
+              <circle cx="5" cy="28" r="2.2" fill="#0F172A" stroke="#38BDF8" stroke-width="0.8"/>
+              <path d="M 0 30 L 11 30 L 9 28 L 2 28 Z" fill="#0F172A" stroke="#38BDF8" stroke-width="0.9"/>
+              <circle cx="10" cy="29" r="1" fill="#38BDF8"/>
+            </g>
           </g>
         </g>
       </g>
