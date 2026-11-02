@@ -21,9 +21,9 @@
 
 | Project | Description | Core Stack | Repository / Demo |
 | :--- | :--- | :--- | :--- |
-| **portfolio3d** | Interactive 3D Developer Portfolio web experience featuring immersive three-dimensional spatial design. | `JavaScript` `Three.js` `WebGL` | [Inspect Code](https://github.com/drkkanhacreation/portfolio3d) |
-| **sakala-bhajana** | Sakala Ra Dhupa — Nostalgic 1990s Sunday morning Odia devotional web cultural experience. | `JavaScript` `HTML5/CSS3` `Web Audio` | [Inspect Code](https://github.com/drkkanhacreation/sakala-bhajana) |
-| **Coding Samurai Internship Task** | Android & Web engineering repository featuring real-world tasks and modern implementations. | `JavaScript` `Android` `REST APIs` | [Inspect Code](https://github.com/drkkanhacreation/CODING-SAMURAI-INTERNSHIP-TASK) |
+| **UK Resort Web Experience** | High-performance hospitality & resort booking web application featuring dynamic layout rendering and fluid UI. | `Next.js` `TypeScript` `TailwindCSS` | [Inspect Code](https://github.com/swadhin-afk/ukresort-nextjs) |
+| **SaaS Startup Architecture** | Scalable cloud software dashboard and startup landing architecture with modular state management. | `React.js` `Node.js` `TailwindCSS` | [Inspect Code](https://github.com/swadhin-afk/saas-startup) |
+| **Doctor Appointment System** | Complete healthcare booking and scheduling portal for patients, doctors, and real-time appointment handling. | `JavaScript` `HTML5/CSS3` `REST APIs` | [Inspect Code](https://github.com/swadhin-afk/doctor-appointment-website) |
 
 <div align="center">
 
