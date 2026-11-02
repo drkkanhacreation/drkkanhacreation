@@ -37,6 +37,41 @@
       <stop offset="100%" stop-color="#080F1E" stop-opacity="0"/>
     </radialGradient>
 
+    <!-- HUD Title Badge Gradients, Clip, and Glow Filter -->
+    <linearGradient id="hud-glass-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08142C" stop-opacity="0.96"/>
+      <stop offset="50%" stop-color="#0E224A" stop-opacity="0.90"/>
+      <stop offset="100%" stop-color="#050C1B" stop-opacity="0.96"/>
+    </linearGradient>
+
+    <linearGradient id="hud-border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF354F" stop-opacity="0.9"/>
+      <stop offset="20%" stop-color="#38BDF8"/>
+      <stop offset="80%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+
+    <linearGradient id="hud-laser-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00F0FF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FF354F" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="hud-glass-glare" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#BAE6FD" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <clipPath id="hud-badge-clip">
+      <polygon points="-85,0 85,0 93,8 93,20 85,28 -85,28 -93,20 -93,8"/>
+    </clipPath>
+
+    <filter id="hud-cyan-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
   </defs>
 
   <style>
@@ -166,12 +201,50 @@
     }
     .drone-strobe {
       animation: drone-nav-strobe 1s ease-in-out infinite;
+    /* HUD Title Badge Animations */
+    @keyframes ai-chip-glow {
+      0%, 100% {
+        transform: scale(0.9);
+        opacity: 0.75;
+      }
+      50% {
+        transform: scale(1.3);
+        opacity: 1;
+      }
+    }
+    .ai-chip-pulse {
+      transform-origin: -73.5px 14px;
+      animation: ai-chip-glow 2s ease-in-out infinite;
+    }
+
+    @keyframes hud-sweep-loop {
+      0% {
+        stroke-dashoffset: 420;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+    .hud-border-sweep {
+      stroke-dasharray: 60 360;
+      animation: hud-sweep-loop 4s linear infinite;
+    }
+
+    @keyframes hud-glass-shimmer {
+      0%, 25% { transform: translateX(-160px) skewX(-25deg); opacity: 0; }
+      40% { opacity: 0.4; }
+      55% { transform: translateX(160px) skewX(-25deg); opacity: 0; }
+      100% { transform: translateX(160px) skewX(-25deg); opacity: 0; }
+    }
+    .hud-glass-sweep {
+      animation: hud-glass-shimmer 5s ease-in-out infinite;
     }
 
     @media (prefers-reduced-motion: reduce) {
       .h-role-1, .h-role-2, .h-role-3, .h-role-4 { animation: none !important; }
       .h-role-2, .h-role-3, .h-role-4 { display: none; }
       .h-role-1 { opacity: 1 !important; transform: none !important; }
+      .ai-chip-pulse, .hud-border-sweep, .hud-glass-sweep { animation: none !important; }
     }
   </style>
 
@@ -415,13 +488,108 @@
     <path d="M -6 280 L -6 296 L 16 296" fill="none" stroke="#FF354F" stroke-width="3"/>
     <path d="M 266 280 L 266 296 L 250 296" fill="none" stroke="#38BDF8" stroke-width="3"/>
 
-    <!-- Verified Engineer Overlay Pill -->
-    <g transform="translate(130, 266)">
-      <rect x="-80" y="0" width="160" height="24" rx="12" fill="#080F1E" stroke="#38BDF8" stroke-width="1.4"/>
-      <polygon points="-70,15 -67,7 -65,7 -68,15" fill="#FF354F"/>
-      <polygon points="-64,15 -61,7 -59,7 -62,15" fill="#FF354F"/>
-      <polygon points="-58,15 -55,7 -53,7 -56,15" fill="#FF354F"/>
-      <text x="-46" y="16" font-family="'SF Mono', monospace" font-size="9.5" font-weight="800" fill="#F4F6FC" letter-spacing="1">ENGINEER / AI</text>
+    <!-- Redesigned Futuristic HUD Title Badge: ENGINEER / AI -->
+    <g id="hud-engineer-badge" transform="translate(130, 264)">
+      <!-- Corner Angular Brackets (Cyberpunk Aerospace Target Lock) -->
+      <!-- Top-Left Red Bracket -->
+      <path d="M -98 4 L -98 -4 L -90 -4" fill="none" stroke="#FF354F" stroke-width="1.6" stroke-linecap="round"/>
+      <!-- Bottom-Left Red Bracket -->
+      <path d="M -98 24 L -98 32 L -90 32" fill="none" stroke="#FF354F" stroke-width="1.6" stroke-linecap="round"/>
+      <!-- Top-Right Cyan Bracket -->
+      <path d="M 90 -4 L 98 -4 L 98 4" fill="none" stroke="#38BDF8" stroke-width="1.6" stroke-linecap="round"/>
+      <!-- Bottom-Right Cyan Bracket -->
+      <path d="M 90 32 L 98 32 L 98 24" fill="none" stroke="#38BDF8" stroke-width="1.6" stroke-linecap="round"/>
+
+      <!-- Outer Subtle Cyan Glow / Drop Shadow -->
+      <polygon points="-85,0 85,0 93,8 93,20 85,28 -85,28 -93,20 -93,8" fill="#0284C7" fill-opacity="0.16" filter="url(#hud-cyan-glow)"/>
+
+      <!-- Main Chamfered HUD Glass Plate Base (Dark Navy Translucent) -->
+      <polygon points="-85,0 85,0 93,8 93,20 85,28 -85,28 -93,20 -93,8" fill="url(#hud-glass-bg)"/>
+
+      <!-- Internal Content Clipped to Plate Geometry -->
+      <g clip-path="url(#hud-badge-clip)">
+        <!-- Top Half Frosted Glass Highlight -->
+        <polygon points="-84,1 84,1 91,8 91,14 -91,14 -91,8" fill="#38BDF8" fill-opacity="0.08"/>
+
+        <!-- Subtle Circuit-Board Traces (Left Side from Chip) -->
+        <path d="M -64 11 L -56 11 L -52 7 L -40 7" fill="none" stroke="#38BDF8" stroke-opacity="0.32" stroke-width="0.8"/>
+        <circle cx="-40" cy="7" r="1.1" fill="#38BDF8" opacity="0.6"/>
+        <path d="M -64 17 L -55 17 L -51 21 L -38 21" fill="none" stroke="#38BDF8" stroke-opacity="0.25" stroke-width="0.8"/>
+        <circle cx="-38" cy="21" r="1.1" fill="#38BDF8" opacity="0.5"/>
+
+        <!-- Circuit-Board Traces (Right Side Detailing) -->
+        <path d="M 44 8 L 60 8 L 64 13 L 78 13" fill="none" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="0.8"/>
+        <circle cx="44" cy="8" r="1" fill="#38BDF8" opacity="0.6"/>
+        <path d="M 50 20 L 66 20 L 70 16 L 82 16" fill="none" stroke="#00F0FF" stroke-opacity="0.3" stroke-width="0.8"/>
+        <circle cx="82" cy="16" r="1.1" fill="#00F0FF" opacity="0.7"/>
+
+        <!-- Sweeping Diagonal Light Glare Reflection -->
+        <g class="hud-glass-sweep">
+          <rect x="-20" y="-10" width="18" height="48" fill="#FFFFFF" fill-opacity="0.18" transform="skewX(-25)"/>
+        </g>
+      </g>
+
+      <!-- Glass Top Reflection Line -->
+      <path d="M -83 1.5 L 83 1.5" stroke="url(#hud-glass-glare)" stroke-width="1" stroke-linecap="round"/>
+
+      <!-- Static Precision Dual-Tone Border -->
+      <polygon points="-85,0 85,0 93,8 93,20 85,28 -85,28 -93,20 -93,8" fill="none" stroke="url(#hud-border-grad)" stroke-width="1.3"/>
+
+      <!-- Animated Neon Laser Sweep across the Border Perimeter -->
+      <polygon points="-85,0 85,0 93,8 93,20 85,28 -85,28 -93,20 -93,8" fill="none" stroke="url(#hud-laser-grad)" stroke-width="2" class="hud-border-sweep"/>
+
+      <!-- Red Accent Marks on Top and Bottom Edges -->
+      <line x1="70" y1="0" x2="80" y2="0" stroke="#FF354F" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="-80" y1="28" x2="-70" y2="28" stroke="#FF354F" stroke-width="2.2" stroke-linecap="round"/>
+
+      <!-- Left AI Microchip Icon -->
+      <g id="hud-ai-icon">
+        <!-- Carrier Lead Pins -->
+        <!-- Left Pins -->
+        <line x1="-83" y1="11" x2="-80" y2="11" stroke="#38BDF8" stroke-width="0.9"/>
+        <line x1="-83" y1="14" x2="-80" y2="14" stroke="#38BDF8" stroke-width="0.9"/>
+        <line x1="-83" y1="17" x2="-80" y2="17" stroke="#38BDF8" stroke-width="0.9"/>
+        <!-- Right Pins -->
+        <line x1="-67" y1="11" x2="-64" y2="11" stroke="#38BDF8" stroke-width="0.9"/>
+        <line x1="-67" y1="14" x2="-64" y2="14" stroke="#38BDF8" stroke-width="0.9"/>
+        <line x1="-67" y1="17" x2="-64" y2="17" stroke="#38BDF8" stroke-width="0.9"/>
+        <!-- Top Pins -->
+        <line x1="-76.5" y1="5.5" x2="-76.5" y2="8" stroke="#38BDF8" stroke-width="0.9"/>
+        <line x1="-73.5" y1="5.5" x2="-73.5" y2="8" stroke="#38BDF8" stroke-width="0.9"/>
+        <line x1="-70.5" y1="5.5" x2="-70.5" y2="8" stroke="#38BDF8" stroke-width="0.9"/>
+        <!-- Bottom Pins -->
+        <line x1="-76.5" y1="20" x2="-76.5" y2="22.5" stroke="#38BDF8" stroke-width="0.9"/>
+        <line x1="-73.5" y1="20" x2="-73.5" y2="22.5" stroke="#38BDF8" stroke-width="0.9"/>
+        <line x1="-70.5" y1="20" x2="-70.5" y2="22.5" stroke="#38BDF8" stroke-width="0.9"/>
+
+        <!-- Silicon Die Body -->
+        <rect x="-80" y="8" width="13" height="12" rx="2" fill="#071228" stroke="#38BDF8" stroke-width="1"/>
+        <rect x="-77" y="10.5" width="7" height="7" rx="1.2" fill="#0A224E" stroke="#00F0FF" stroke-width="0.6"/>
+
+        <!-- Pulsing AI Core Node -->
+        <circle cx="-73.5" cy="14" r="2.4" fill="#00F0FF" class="ai-chip-pulse"/>
+        <circle cx="-73.5" cy="14" r="1.1" fill="#FFFFFF"/>
+      </g>
+
+      <!-- Technical Divider -->
+      <line x1="-58" y1="6" x2="-58" y2="22" stroke="#38BDF8" stroke-opacity="0.35" stroke-width="0.9"/>
+
+      <!-- Red Cyberpunk Accent Slashes -->
+      <g transform="translate(-54, 8.5)">
+        <polygon points="0,11 2.5,0 4.5,0 2,11" fill="#FF354F"/>
+        <polygon points="4,11 6.5,0 8.5,0 6,11" fill="#FF354F"/>
+        <polygon points="8,11 10.5,0 12.5,0 10,11" fill="#FF354F"/>
+      </g>
+
+      <!-- Main Bold Futuristic Title Typography -->
+      <text x="-37" y="18" font-family="-apple-system, BlinkMacSystemFont, 'SF Mono', 'Segoe UI', 'Impact', sans-serif" font-size="10" font-weight="900" letter-spacing="1.1">
+        <tspan fill="#F8FAFC">ENGINEER</tspan>
+        <tspan fill="#38BDF8"> / </tspan>
+        <tspan fill="#00F0FF">AI</tspan>
+      </text>
+
+      <!-- Mini Telemetry Label on Far Right -->
+      <text x="83" y="8" text-anchor="end" font-family="'SF Mono', 'Fira Code', monospace" font-size="5" font-weight="800" fill="#38BDF8" opacity="0.75" letter-spacing="0.5">SYS // 063</text>
     </g>
   </g>
 </svg>
