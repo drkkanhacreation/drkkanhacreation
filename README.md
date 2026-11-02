@@ -1,20 +1,19 @@
 <!-- 
 ===================================================================
   SWADHINJIT SAHOO — PREMIUM ANIMATED GITHUB PROFILE
-  Built following the Grow with Udit Profile Playbook Specification
-  Theme: Rich Midnight Blue & Space Sapphire
+  Built following the Grow with Udit Flagship Playbook Specification
 ===================================================================
 -->
 
 <div align="center">
 
-![Introduction](./assets/hero.svg?v=7)
+![Introduction](./assets/hero.svg?v=8)
 
-![About Me](./assets/about-life.svg?v=7)
+![About Me](./assets/about-life.svg?v=8)
 
-![Technology Stack](./assets/stack.svg?v=7)
+![Technology Stack](./assets/stack.svg?v=8)
 
-![Digital ID](./assets/id-dashboard.svg?v=7)
+![Digital ID](./assets/id-dashboard.svg?v=8)
 
 </div>
 
@@ -28,7 +27,7 @@
 
 <div align="center">
 
-![Connect](./assets/connect.svg?v=7)
+![Connect](./assets/connect.svg?v=8)
 
 ### 🤝 Connect with Swadhinjit
 
@@ -38,7 +37,7 @@
   </a>
   &nbsp;
   <a href="https://drkkanhacreation.my.canva.site/dkc" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-0B1938?style=for-the-badge&logo=googlechrome&logoColor=38BDF8" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-080F1E?style=for-the-badge&logo=googlechrome&logoColor=38BDF8" alt="Portfolio" />
   </a>
   &nbsp;
   <a href="https://github.com/drkkanhacreation" target="_blank">
@@ -51,7 +50,7 @@
 </p>
 
 <p align="center">
-  <sub>"Bridging intelligent software and autonomous hardware at IG Drones."</sub><br/>
+  <sub>"Engineering autonomous flight stacks, edge AI perception, and scalable systems."</sub><br/>
   <sub>© 2026 Swadhinjit Sahoo · Drone Engineer @ IG Drones</sub>
 </p>
 
