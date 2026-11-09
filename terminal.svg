@@ -23,7 +23,7 @@
 
     <!-- Sub-panel background -->
     <linearGradient id="telemetry-box-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#10234C" stop-opacity="0.7"/>
+      <stop offset="0%" stop-color="#10234C" stop-opacity="0.75"/>
       <stop offset="100%" stop-color="#09142B" stop-opacity="0.9"/>
     </linearGradient>
   </defs>
@@ -34,7 +34,7 @@
       50%, 100% { opacity: 0; }
     }
     
-    /* 11-second boot sequence animation using pure opacity */
+    /* 11-second sequence animation using pure opacity */
     @keyframes seq1 { 0% { opacity: 0; } 4%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
     @keyframes seq2 { 0%, 8% { opacity: 0; } 13%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
     @keyframes seq3 { 0%, 18% { opacity: 0; } 23%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
@@ -88,15 +88,15 @@
   <!-- Terminal Window Title -->
   <g transform="translate(100, 32)">
     <text x="0" y="0" font-family="'SF Mono', 'Fira Code', 'Roboto Mono', monospace" font-size="11.5" font-weight="700" fill="#93C5FD" letter-spacing="0.8">
-      swadhinjit@ig-flight-station: <tspan fill="#38BDF8">~/ros2_ws/src/autonomous_flight</tspan> <tspan fill="#64748B">(humble-main)</tspan>
+      swadhinjit@flight-station: <tspan fill="#38BDF8">~/mad_x_honors</tspan> <tspan fill="#64748B">(verified-trophies)</tspan>
     </text>
   </g>
 
   <!-- Live Status Badge (Top Right) -->
-  <g transform="translate(780, 20)">
-    <rect x="0" y="0" width="152" height="22" rx="6" fill="#081428" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.6"/>
-    <circle cx="12" cy="11" r="4" fill="#10B981" class="live-pulse"/>
-    <text x="24" y="14.5" font-family="'SF Mono', monospace" font-size="9.5" font-weight="800" fill="#38BDF8" letter-spacing="1">ROS 2 CORE : ACTIVE</text>
+  <g transform="translate(760, 20)">
+    <rect x="0" y="0" width="172" height="22" rx="6" fill="#081428" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.6"/>
+    <circle cx="12" cy="11" r="4" fill="#F59E0B" class="live-pulse"/>
+    <text x="24" y="14.5" font-family="'SF Mono', monospace" font-size="9.5" font-weight="800" fill="#F59E0B" letter-spacing="0.8">LEADER &#x2022; TEAM MAD-X</text>
   </g>
 
   <!-- ================= TERMINAL BODY ================= -->
@@ -106,86 +106,86 @@
     <g class="line-1">
       <text x="0" y="20" font-family="'SF Mono', 'Fira Code', monospace" font-size="12.5" font-weight="600">
         <tspan fill="#10B981" font-weight="800">swadhin@drone-core</tspan><tspan fill="#64748B">:</tspan><tspan fill="#38BDF8">~</tspan><tspan fill="#F4F6FC">$</tspan>
-        <tspan fill="#F4F6FC"> ros2 launch ig_autonomy mission.launch.py --vehicle=quadcopter_v4 --autonav=true</tspan>
+        <tspan fill="#F4F6FC"> ./fetch_achievements.sh --team=MAD-X --leader="Swadhinjit Sahoo" --verified=true</tspan>
       </text>
     </g>
 
-    <!-- LINE 2: ROS2 Node initialization (y=44) -->
+    <!-- LINE 2: 1st Place TRITHON 2026 (y=44) -->
     <g class="line-2">
       <text x="0" y="44" font-family="'SF Mono', monospace" font-size="11.5">
-        <tspan fill="#64748B">[00.08s]</tspan>
-        <tspan fill="#38BDF8" font-weight="700"> [INFO] </tspan>
-        <tspan fill="#93C5FD">[px4_mavlink_bridge]:</tspan>
-        <tspan fill="#CBD5E1"> Initializing high-speed telemetry link on /dev/ttyTHS1 (921600 baud) ... </tspan>
-        <tspan fill="#10B981" font-weight="800">[CONNECTED]</tspan>
+        <tspan fill="#64748B">[2026]</tspan>
+        <tspan fill="#F59E0B" font-weight="800"> [1st PLACE / WINNER] </tspan>
+        <tspan fill="#F4F6FC" font-weight="700">TRITHON Hackathon</tspan>
+        <tspan fill="#CBD5E1"> &#x2022; Trident Academy of Technology (&#x20B9;30,000) ... </tspan>
+        <tspan fill="#10B981" font-weight="800">[CHAMPION]</tspan>
       </text>
     </g>
 
-    <!-- LINE 3: Visual-Inertial Odometry (y=68) -->
+    <!-- LINE 3: 1st Place IIT Pravaah 2026 (y=68) -->
     <g class="line-3">
       <text x="0" y="68" font-family="'SF Mono', monospace" font-size="11.5">
-        <tspan fill="#64748B">[00.34s]</tspan>
-        <tspan fill="#38BDF8" font-weight="700"> [INFO] </tspan>
-        <tspan fill="#93C5FD">[vio_odometry_node]:</tspan>
-        <tspan fill="#CBD5E1"> GPS-denied optical tracking fusion online (drift rate &lt; 0.015m/s) ... </tspan>
-        <tspan fill="#10B981" font-weight="800">[LOCKED]</tspan>
+        <tspan fill="#64748B">[2026]</tspan>
+        <tspan fill="#F59E0B" font-weight="800"> [1st PLACE / WINNER] </tspan>
+        <tspan fill="#F4F6FC" font-weight="700">IIT Pravaah Autonomous Robotics</tspan>
+        <tspan fill="#CBD5E1"> &#x2022; IIT Bhubaneswar (&#x20B9;10,000) ... </tspan>
+        <tspan fill="#10B981" font-weight="800">[IIT BBSR GOLD]</tspan>
       </text>
     </g>
 
-    <!-- LINE 4: Edge AI YOLOv8 Perception (y=92) -->
+    <!-- LINE 4: PAN-INDIA WINNER Sustainovation 2025 (y=92) -->
     <g class="line-4">
       <text x="0" y="92" font-family="'SF Mono', monospace" font-size="11.5">
-        <tspan fill="#64748B">[00.72s]</tspan>
-        <tspan fill="#38BDF8" font-weight="700"> [INFO] </tspan>
-        <tspan fill="#93C5FD">[tensorrt_perception]:</tspan>
-        <tspan fill="#CBD5E1"> Jetson Edge AI Core loaded: YOLOv8n engine running @ 78 FPS (12.8ms) ... </tspan>
-        <tspan fill="#10B981" font-weight="800">[ACTIVE]</tspan>
+        <tspan fill="#64748B">[2025]</tspan>
+        <tspan fill="#38BDF8" font-weight="800"> [PAN-INDIA WINNER] </tspan>
+        <tspan fill="#F4F6FC" font-weight="700">Sustainovation National Challenge</tspan>
+        <tspan fill="#CBD5E1"> &#x2022; Amity University Noida (&#x20B9;25,000) ... </tspan>
+        <tspan fill="#38BDF8" font-weight="800">[NATIONAL]</tspan>
       </text>
     </g>
 
-    <!-- LINE 5: 360° LiDAR Avoidance Array (y=116) -->
+    <!-- LINE 5: 2nd Place BPUT & Srusti Tech Hack (y=116) -->
     <g class="line-5">
       <text x="0" y="116" font-family="'SF Mono', monospace" font-size="11.5">
-        <tspan fill="#64748B">[01.12s]</tspan>
-        <tspan fill="#38BDF8" font-weight="700"> [INFO] </tspan>
-        <tspan fill="#93C5FD">[lidar_nav_grid]:</tspan>
-        <tspan fill="#CBD5E1"> Real-time 3D OctoMap generated &#x2022; 360&#176; collision-free corridor verified ... </tspan>
-        <tspan fill="#10B981" font-weight="800">[CLEAR]</tspan>
+        <tspan fill="#64748B">[2025-26]</tspan>
+        <tspan fill="#93C5FD" font-weight="800"> [2nd PLACE / RUNNER] </tspan>
+        <tspan fill="#F4F6FC" font-weight="700">BPUT Hackathon &amp; Srusti Tech Hack</tspan>
+        <tspan fill="#CBD5E1"> &#x2022; BPUT Rourkela (&#x20B9;30,000) ... </tspan>
+        <tspan fill="#10B981" font-weight="800">[PODIUM]</tspan>
       </text>
     </g>
 
-    <!-- LINE 6: Swarm Radio Mesh & Telemetry Sync (y=140) -->
+    <!-- LINE 6: IIT Pravaah Multi-Year Multi-Podium (y=140) -->
     <g class="line-6">
       <text x="0" y="140" font-family="'SF Mono', monospace" font-size="11.5">
-        <tspan fill="#64748B">[01.45s]</tspan>
-        <tspan fill="#38BDF8" font-weight="700"> [INFO] </tspan>
-        <tspan fill="#93C5FD">[swarm_telemetry]:</tspan>
-        <tspan fill="#CBD5E1"> Encrypted mesh link established with IG Ground Station (2.4GHz) ... </tspan>
-        <tspan fill="#10B981" font-weight="800">[SYNCED]</tspan>
+        <tspan fill="#64748B">[2024-26]</tspan>
+        <tspan fill="#FFBD2E" font-weight="800"> [6x PODIUM FINISH] </tspan>
+        <tspan fill="#F4F6FC" font-weight="700">IIT Pravaah Innovation Expo &amp; Robo Soccer</tspan>
+        <tspan fill="#CBD5E1"> &#x2022; IIT Bhubaneswar ... </tspan>
+        <tspan fill="#38BDF8" font-weight="800">[IIT BBSR]</tspan>
       </text>
     </g>
 
-    <!-- LINE 7: SUCCESS STATUS BANNER (y=160 to y=198) -->
+    <!-- LINE 7: HONORS & PRIZE POOL BANNER (y=160 to y=198) -->
     <g class="line-7" transform="translate(0, 160)">
-      <rect x="0" y="0" width="896" height="38" rx="8" fill="url(#telemetry-box-bg)" stroke="#10B981" stroke-width="1.2" stroke-opacity="0.8"/>
-      <!-- Small green check badge -->
-      <circle cx="20" cy="19" r="9" fill="#10B981" fill-opacity="0.2"/>
-      <path d="M16 19 L19 22 L25 16" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <text x="38" y="23" font-family="'SF Mono', monospace" font-size="11" font-weight="800" fill="#10B981" letter-spacing="0.8">
-        MISSION STATUS: ALL PRE-FLIGHT CHECKS PASSED &#x2022; MOTORS ARMED &#x2022; AUTONOMOUS FLIGHT ALL-GO
+      <rect x="0" y="0" width="896" height="38" rx="8" fill="url(#telemetry-box-bg)" stroke="#F59E0B" stroke-width="1.2" stroke-opacity="0.85"/>
+      <!-- Small trophy icon badge -->
+      <circle cx="20" cy="19" r="9" fill="#F59E0B" fill-opacity="0.2"/>
+      <path d="M15 14 H25 V19 C25 21.5 22.5 23 20 23 C17.5 23 15 21.5 15 19 Z M17 23 L16 26 H24 L23 23" fill="none" stroke="#F59E0B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="38" y="23" font-family="'SF Mono', monospace" font-size="11" font-weight="800" fill="#F59E0B" letter-spacing="0.8">
+        MISSION RECORD: 12+ PODIUM WINS &#x2022; &#x20B9;1,20,000+ CASH PRIZE POOL &#x2022; IIT &amp; PAN-INDIA CHAMPION
       </text>
-      <!-- Telemetry metric tags on the right -->
-      <rect x="740" y="8" width="68" height="22" rx="4" fill="#081428" stroke="#38BDF8" stroke-width="0.8"/>
-      <text x="774" y="22" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#38BDF8">BAT: 99%</text>
-      <rect x="816" y="8" width="68" height="22" rx="4" fill="#081428" stroke="#FF354F" stroke-width="0.8"/>
-      <text x="850" y="22" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#FF354F">ALT: 25M</text>
+      <!-- Metric tags on the right -->
+      <rect x="670" y="8" width="105" height="22" rx="4" fill="#081428" stroke="#38BDF8" stroke-width="0.8"/>
+      <text x="722" y="22" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#38BDF8">TEAM: MAD-X</text>
+      <rect x="782" y="8" width="102" height="22" rx="4" fill="#081428" stroke="#10B981" stroke-width="0.8"/>
+      <text x="833" y="22" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#10B981">ROLE: LEADER</text>
     </g>
 
     <!-- LINE 8: Next Ready Prompt with Blinking Cursor (y=226) -->
     <g class="line-8">
       <text x="0" y="226" font-family="'SF Mono', 'Fira Code', monospace" font-size="12.5" font-weight="600">
         <tspan fill="#10B981" font-weight="800">swadhin@drone-core</tspan><tspan fill="#64748B">:</tspan><tspan fill="#38BDF8">~</tspan><tspan fill="#F4F6FC">$</tspan>
-        <tspan fill="#38BDF8"> echo "Autonomous systems operational. Ready for deployment."</tspan>
+        <tspan fill="#38BDF8"> echo "Autonomous robotics engineer &#x2022; Hackathon champion &#x2022; Ready for deployment."</tspan>
         <tspan fill="#38BDF8" class="term-cursor" font-weight="900"> &#x2588;</tspan>
       </text>
     </g>

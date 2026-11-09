@@ -13,7 +13,7 @@
 
 ![Technology Stack](./assets/stack.svg?v=23)
 
-![ROS 2 Mission Control Terminal](./assets/terminal.svg?v=23)
+![ROS 2 Mission Control Terminal](./assets/terminal.svg?v=25)
 
 ![Digital ID](./assets/id-dashboard.svg?v=23)
 
