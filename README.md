@@ -7,13 +7,15 @@
 
 <div align="center">
 
-![Introduction](./assets/hero.svg?v=22)
+![Introduction](./assets/hero.svg?v=23)
 
-![About Me](./assets/about-life.svg?v=22)
+![About Me](./assets/about-life.svg?v=23)
 
-![Technology Stack](./assets/stack.svg?v=22)
+![Technology Stack](./assets/stack.svg?v=23)
 
-![Digital ID](./assets/id-dashboard.svg?v=22)
+![ROS 2 Mission Control Terminal](./assets/terminal.svg?v=23)
+
+![Digital ID](./assets/id-dashboard.svg?v=23)
 
 </div>
 
@@ -27,7 +29,7 @@
 
 <div align="center">
 
-![Connect](./assets/connect.svg?v=22)
+![Connect](./assets/connect.svg?v=23)
 
 ### 🤝 Connect with Swadhinjit
 

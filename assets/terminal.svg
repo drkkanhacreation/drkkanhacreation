@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient matching Midnight Navy theme -->
+    <linearGradient id="term-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080F1E"/>
+      <stop offset="40%" stop-color="#0B1630"/>
+      <stop offset="80%" stop-color="#0E1E42"/>
+      <stop offset="100%" stop-color="#091226"/>
+    </linearGradient>
+
+    <!-- Outer Border Gradient (Electric Cyan to Neon Red to Royal Blue) -->
+    <linearGradient id="term-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#FF354F" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#247BFF" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Header bar subtle gradient -->
+    <linearGradient id="term-header-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D1B38"/>
+      <stop offset="100%" stop-color="#081022"/>
+    </linearGradient>
+
+    <!-- Sub-panel background -->
+    <linearGradient id="telemetry-box-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10234C" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#09142B" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    
+    /* 11-second boot sequence animation using pure opacity */
+    @keyframes seq1 { 0% { opacity: 0; } 4%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes seq2 { 0%, 8% { opacity: 0; } 13%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes seq3 { 0%, 18% { opacity: 0; } 23%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes seq4 { 0%, 28% { opacity: 0; } 33%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes seq5 { 0%, 38% { opacity: 0; } 43%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes seq6 { 0%, 48% { opacity: 0; } 53%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes seq7 { 0%, 58% { opacity: 0; } 63%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes seq8 { 0%, 68% { opacity: 0; } 73%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+
+    @keyframes live-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+
+    .line-1 { animation: seq1 11s ease-out infinite; }
+    .line-2 { animation: seq2 11s ease-out infinite; }
+    .line-3 { animation: seq3 11s ease-out infinite; }
+    .line-4 { animation: seq4 11s ease-out infinite; }
+    .line-5 { animation: seq5 11s ease-out infinite; }
+    .line-6 { animation: seq6 11s ease-out infinite; }
+    .line-7 { animation: seq7 11s ease-out infinite; }
+    .line-8 { animation: seq8 11s ease-out infinite; }
+
+    .term-cursor { animation: blink 0.85s step-start infinite; }
+    .live-pulse { animation: live-dot 1.8s ease-in-out infinite; }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .line-1, .line-2, .line-3, .line-4, .line-5, .line-6, .line-7, .line-8 {
+        animation: none !important;
+        opacity: 1 !important;
+      }
+      .term-cursor { animation: none !important; opacity: 1 !important; }
+      .live-pulse { animation: none !important; opacity: 1 !important; }
+    }
+  </style>
+
+  <!-- Container Box -->
+  <rect x="8" y="8" width="944" height="314" rx="18" fill="url(#term-bg)"/>
+  <rect x="8" y="8" width="944" height="314" rx="18" fill="none" stroke="url(#term-border)" stroke-width="1.8"/>
+
+  <!-- ================= TOP HEADER BAR ================= -->
+  <rect x="8" y="8" width="944" height="42" rx="18" fill="url(#term-header-bg)"/>
+  <rect x="8" y="36" width="944" height="14" fill="url(#term-header-bg)"/>
+  <line x1="8" y1="50" x2="952" y2="50" stroke="#1E293B" stroke-width="1.2"/>
+
+  <!-- Window Controls (Red, Yellow, Green macOS-style dots) -->
+  <circle cx="34" cy="28" r="6" fill="#FF5F56"/>
+  <circle cx="54" cy="28" r="6" fill="#FFBD2E"/>
+  <circle cx="74" cy="28" r="6" fill="#27C93F"/>
+
+  <!-- Terminal Window Title -->
+  <g transform="translate(100, 32)">
+    <text x="0" y="0" font-family="'SF Mono', 'Fira Code', 'Roboto Mono', monospace" font-size="11.5" font-weight="700" fill="#93C5FD" letter-spacing="0.8">
+      swadhinjit@ig-flight-station: <tspan fill="#38BDF8">~/ros2_ws/src/autonomous_flight</tspan> <tspan fill="#64748B">(humble-main)</tspan>
+    </text>
+  </g>
+
+  <!-- Live Status Badge (Top Right) -->
+  <g transform="translate(780, 20)">
+    <rect x="0" y="0" width="152" height="22" rx="6" fill="#081428" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.6"/>
+    <circle cx="12" cy="11" r="4" fill="#10B981" class="live-pulse"/>
+    <text x="24" y="14.5" font-family="'SF Mono', monospace" font-size="9.5" font-weight="800" fill="#38BDF8" letter-spacing="1">ROS 2 CORE : ACTIVE</text>
+  </g>
+
+  <!-- ================= TERMINAL BODY ================= -->
+  <g transform="translate(32, 60)">
+    
+    <!-- LINE 1: The Command (y=20) -->
+    <g class="line-1">
+      <text x="0" y="20" font-family="'SF Mono', 'Fira Code', monospace" font-size="12.5" font-weight="600">
+        <tspan fill="#10B981" font-weight="800">swadhin@drone-core</tspan><tspan fill="#64748B">:</tspan><tspan fill="#38BDF8">~</tspan><tspan fill="#F4F6FC">$</tspan>
+        <tspan fill="#F4F6FC"> ros2 launch ig_autonomy mission.launch.py --vehicle=quadcopter_v4 --autonav=true</tspan>
+      </text>
+    </g>
+
+    <!-- LINE 2: ROS2 Node initialization (y=44) -->
+    <g class="line-2">
+      <text x="0" y="44" font-family="'SF Mono', monospace" font-size="11.5">
+        <tspan fill="#64748B">[00.08s]</tspan>
+        <tspan fill="#38BDF8" font-weight="700"> [INFO] </tspan>
+        <tspan fill="#93C5FD">[px4_mavlink_bridge]:</tspan>
+        <tspan fill="#CBD5E1"> Initializing high-speed telemetry link on /dev/ttyTHS1 (921600 baud) ... </tspan>
+        <tspan fill="#10B981" font-weight="800">[CONNECTED]</tspan>
+      </text>
+    </g>
+
+    <!-- LINE 3: Visual-Inertial Odometry (y=68) -->
+    <g class="line-3">
+      <text x="0" y="68" font-family="'SF Mono', monospace" font-size="11.5">
+        <tspan fill="#64748B">[00.34s]</tspan>
+        <tspan fill="#38BDF8" font-weight="700"> [INFO] </tspan>
+        <tspan fill="#93C5FD">[vio_odometry_node]:</tspan>
+        <tspan fill="#CBD5E1"> GPS-denied optical tracking fusion online (drift rate &lt; 0.015m/s) ... </tspan>
+        <tspan fill="#10B981" font-weight="800">[LOCKED]</tspan>
+      </text>
+    </g>
+
+    <!-- LINE 4: Edge AI YOLOv8 Perception (y=92) -->
+    <g class="line-4">
+      <text x="0" y="92" font-family="'SF Mono', monospace" font-size="11.5">
+        <tspan fill="#64748B">[00.72s]</tspan>
+        <tspan fill="#38BDF8" font-weight="700"> [INFO] </tspan>
+        <tspan fill="#93C5FD">[tensorrt_perception]:</tspan>
+        <tspan fill="#CBD5E1"> Jetson Edge AI Core loaded: YOLOv8n engine running @ 78 FPS (12.8ms) ... </tspan>
+        <tspan fill="#10B981" font-weight="800">[ACTIVE]</tspan>
+      </text>
+    </g>
+
+    <!-- LINE 5: 360° LiDAR Avoidance Array (y=116) -->
+    <g class="line-5">
+      <text x="0" y="116" font-family="'SF Mono', monospace" font-size="11.5">
+        <tspan fill="#64748B">[01.12s]</tspan>
+        <tspan fill="#38BDF8" font-weight="700"> [INFO] </tspan>
+        <tspan fill="#93C5FD">[lidar_nav_grid]:</tspan>
+        <tspan fill="#CBD5E1"> Real-time 3D OctoMap generated &#x2022; 360&#176; collision-free corridor verified ... </tspan>
+        <tspan fill="#10B981" font-weight="800">[CLEAR]</tspan>
+      </text>
+    </g>
+
+    <!-- LINE 6: Swarm Radio Mesh & Telemetry Sync (y=140) -->
+    <g class="line-6">
+      <text x="0" y="140" font-family="'SF Mono', monospace" font-size="11.5">
+        <tspan fill="#64748B">[01.45s]</tspan>
+        <tspan fill="#38BDF8" font-weight="700"> [INFO] </tspan>
+        <tspan fill="#93C5FD">[swarm_telemetry]:</tspan>
+        <tspan fill="#CBD5E1"> Encrypted mesh link established with IG Ground Station (2.4GHz) ... </tspan>
+        <tspan fill="#10B981" font-weight="800">[SYNCED]</tspan>
+      </text>
+    </g>
+
+    <!-- LINE 7: SUCCESS STATUS BANNER (y=160 to y=198) -->
+    <g class="line-7" transform="translate(0, 160)">
+      <rect x="0" y="0" width="896" height="38" rx="8" fill="url(#telemetry-box-bg)" stroke="#10B981" stroke-width="1.2" stroke-opacity="0.8"/>
+      <!-- Small green check badge -->
+      <circle cx="20" cy="19" r="9" fill="#10B981" fill-opacity="0.2"/>
+      <path d="M16 19 L19 22 L25 16" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="38" y="23" font-family="'SF Mono', monospace" font-size="11" font-weight="800" fill="#10B981" letter-spacing="0.8">
+        MISSION STATUS: ALL PRE-FLIGHT CHECKS PASSED &#x2022; MOTORS ARMED &#x2022; AUTONOMOUS FLIGHT ALL-GO
+      </text>
+      <!-- Telemetry metric tags on the right -->
+      <rect x="740" y="8" width="68" height="22" rx="4" fill="#081428" stroke="#38BDF8" stroke-width="0.8"/>
+      <text x="774" y="22" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#38BDF8">BAT: 99%</text>
+      <rect x="816" y="8" width="68" height="22" rx="4" fill="#081428" stroke="#FF354F" stroke-width="0.8"/>
+      <text x="850" y="22" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#FF354F">ALT: 25M</text>
+    </g>
+
+    <!-- LINE 8: Next Ready Prompt with Blinking Cursor (y=226) -->
+    <g class="line-8">
+      <text x="0" y="226" font-family="'SF Mono', 'Fira Code', monospace" font-size="12.5" font-weight="600">
+        <tspan fill="#10B981" font-weight="800">swadhin@drone-core</tspan><tspan fill="#64748B">:</tspan><tspan fill="#38BDF8">~</tspan><tspan fill="#F4F6FC">$</tspan>
+        <tspan fill="#38BDF8"> echo "Autonomous systems operational. Ready for deployment."</tspan>
+        <tspan fill="#38BDF8" class="term-cursor" font-weight="900"> &#x2588;</tspan>
+      </text>
+    </g>
+
+  </g>
+
+</svg>
