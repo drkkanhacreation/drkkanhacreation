@@ -1,0 +1,308 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient matching Midnight Navy theme -->
+    <linearGradient id="proj-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080F1E"/>
+      <stop offset="35%" stop-color="#0B1630"/>
+      <stop offset="70%" stop-color="#0E1E42"/>
+      <stop offset="100%" stop-color="#091226"/>
+    </linearGradient>
+
+    <!-- Card Border Gradient (Electric Cyan to Neon Red to Royal Blue) -->
+    <linearGradient id="proj-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#FF354F" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#247BFF" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Sub-card backgrounds -->
+    <linearGradient id="card-inner-bg-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F244C" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0A152E" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="card-inner-bg-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1848" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0A152E" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="card-inner-bg-3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2338" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0A152E" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Button Gradient -->
+    <linearGradient id="btn-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+
+    <linearGradient id="btn-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+
+    <linearGradient id="btn-amber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+
+    <!-- Pill Background -->
+    <linearGradient id="pill-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10254C" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0B1832" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes livePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.92); }
+    }
+    @keyframes borderGlow {
+      0%, 100% { stroke-opacity: 0.6; }
+      50% { stroke-opacity: 1; }
+    }
+    .pulse-dot { animation: livePulse 2s ease-in-out infinite; transform-origin: center; }
+    .card-border-glow { animation: borderGlow 3s ease-in-out infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pulse-dot, .card-border-glow { animation: none !important; opacity: 1 !important; }
+    }
+  </style>
+
+  <!-- Container Box -->
+  <rect x="8" y="8" width="944" height="504" rx="20" fill="url(#proj-bg)"/>
+  <rect x="8" y="8" width="944" height="504" rx="20" fill="none" stroke="url(#proj-border)" stroke-width="1.8"/>
+
+  <!-- ================= SECTION HEADER ================= -->
+  <g transform="translate(45, 46)">
+    <!-- Main Heading -->
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Impact', sans-serif" font-size="22" font-weight="900" fill="#F4F6FC" letter-spacing="1">FEATURED ENGINEERING &amp; REPOSITORIES</text>
+    
+    <!-- Subtitle Category Tag -->
+    <text x="0" y="22" font-family="'SF Mono', 'Fira Code', monospace" font-size="10.5" font-weight="700" fill="#93C5FD" letter-spacing="1.5">04 / PRODUCTION / 3D WEBGL / CULTURAL AUDIO / APIS</text>
+
+    <!-- Slanted Red Bars /// -->
+    <g transform="translate(845, -16)">
+      <polygon points="0,15 5,0 9,0 4,15" fill="#FF354F"/>
+      <polygon points="8,15 13,0 17,0 12,15" fill="#FF354F"/>
+      <polygon points="16,15 21,0 25,0 20,15" fill="#FF354F"/>
+    </g>
+  </g>
+
+  <!-- Hairline Divider -->
+  <line x1="45" y1="84" x2="915" y2="84" stroke="#38BDF8" stroke-opacity="0.25" stroke-width="1"/>
+
+  <!-- ================= CARD 1: portfolio3d (y=100) ================= -->
+  <g transform="translate(42, 100)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="876" height="110" rx="12" fill="url(#card-inner-bg-1)"/>
+    <rect x="0" y="0" width="876" height="110" rx="12" fill="none" stroke="#38BDF8" stroke-width="1.2" stroke-opacity="0.7" class="card-border-glow"/>
+
+    <!-- Left Cyan Accent Indicator Bar -->
+    <path d="M0 12 C0 5.37 5.37 0 12 0 L12 110 C5.37 110 0 104.63 0 98 Z" fill="#38BDF8"/>
+
+    <!-- Icon: 3D Wireframe Cube (x=28, y=24) -->
+    <g transform="translate(26, 26)">
+      <circle cx="16" cy="16" r="20" fill="#081428" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.8"/>
+      <!-- Isometric cube wireframe -->
+      <polygon points="16,6 26,11 26,22 16,27 6,22 6,11" fill="none" stroke="#38BDF8" stroke-width="1.4"/>
+      <line x1="16" y1="6" x2="16" y2="17" stroke="#38BDF8" stroke-width="1.2"/>
+      <line x1="16" y1="17" x2="6" y2="11" stroke="#38BDF8" stroke-width="1.2"/>
+      <line x1="16" y1="17" x2="26" y2="11" stroke="#38BDF8" stroke-width="1.2"/>
+      <line x1="16" y1="17" x2="16" y2="27" stroke="#38BDF8" stroke-width="1.2"/>
+    </g>
+
+    <!-- Project Title & Subtitle -->
+    <text x="74" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="800" fill="#F4F6FC" letter-spacing="0.5">
+      portfolio3d
+    </text>
+    
+    <!-- Status Badge (Live 3D WebGL) -->
+    <g transform="translate(182, 17)">
+      <rect x="0" y="0" width="168" height="20" rx="10" fill="#061E2E" stroke="#10B981" stroke-width="1" stroke-opacity="0.8"/>
+      <circle cx="12" cy="10" r="3.5" fill="#10B981" class="pulse-dot"/>
+      <text x="22" y="13.5" font-family="'SF Mono', monospace" font-size="9" font-weight="800" fill="#10B981" letter-spacing="0.8">LIVE 3D WEBGL ENGINE</text>
+    </g>
+
+    <!-- Description -->
+    <text x="74" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500" fill="#CBD5E1">
+      Interactive 3D Developer Portfolio web experience featuring immersive three-dimensional spatial design.
+    </text>
+
+    <!-- Tech Stack Pills (Bottom Left) -->
+    <g transform="translate(74, 72)">
+      <!-- Pill 1: JavaScript -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="82" height="22" rx="5" fill="url(#pill-bg)" stroke="#F59E0B" stroke-width="0.8" stroke-opacity="0.8"/>
+        <text x="41" y="14.5" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#FCD34D">JavaScript</text>
+      </g>
+      <!-- Pill 2: Three.js -->
+      <g transform="translate(90, 0)">
+        <rect x="0" y="0" width="76" height="22" rx="5" fill="url(#pill-bg)" stroke="#38BDF8" stroke-width="0.8" stroke-opacity="0.8"/>
+        <text x="38" y="14.5" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#38BDF8">Three.js</text>
+      </g>
+      <!-- Pill 3: WebGL -->
+      <g transform="translate(174, 0)">
+        <rect x="0" y="0" width="62" height="22" rx="5" fill="url(#pill-bg)" stroke="#FF354F" stroke-width="0.8" stroke-opacity="0.8"/>
+        <text x="31" y="14.5" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#FDA4AF">WebGL</text>
+      </g>
+    </g>
+
+    <!-- Action Button (Bottom Right) -->
+    <g transform="translate(712, 36)">
+      <a href="https://github.com/drkkanhacreation/portfolio3d" target="_blank">
+        <rect x="0" y="0" width="144" height="36" rx="8" fill="url(#btn-cyan)" stroke="#38BDF8" stroke-width="1.2"/>
+        <text x="72" y="22" text-anchor="middle" font-family="'SF Mono', monospace" font-size="11" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">
+          INSPECT CODE &#x2197;
+        </text>
+      </a>
+    </g>
+  </g>
+
+  <!-- ================= CARD 2: sakala-bhajana (y=224) ================= -->
+  <g transform="translate(42, 224)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="876" height="110" rx="12" fill="url(#card-inner-bg-2)"/>
+    <rect x="0" y="0" width="876" height="110" rx="12" fill="none" stroke="#A855F7" stroke-width="1.2" stroke-opacity="0.6"/>
+
+    <!-- Left Purple Accent Indicator Bar -->
+    <path d="M0 12 C0 5.37 5.37 0 12 0 L12 110 C5.37 110 0 104.63 0 98 Z" fill="#A855F7"/>
+
+    <!-- Icon: Sound Wave / Audio (x=26, y=26) -->
+    <g transform="translate(26, 26)">
+      <circle cx="16" cy="16" r="20" fill="#081428" stroke="#A855F7" stroke-width="1" stroke-opacity="0.8"/>
+      <!-- Audio wave bars -->
+      <line x1="8" y1="16" x2="8" y2="16" stroke="#A855F7" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="12" y1="12" x2="12" y2="20" stroke="#C084FC" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="16" y1="8" x2="16" y2="24" stroke="#E9D5FF" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="20" y1="11" x2="20" y2="21" stroke="#C084FC" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="24" y1="14" x2="24" y2="18" stroke="#A855F7" stroke-width="2.2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Project Title & Subtitle -->
+    <text x="74" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="800" fill="#F4F6FC" letter-spacing="0.5">
+      sakala-bhajana
+    </text>
+    
+    <!-- Status Badge (Cultural Audio App) -->
+    <g transform="translate(202, 17)">
+      <rect x="0" y="0" width="186" height="20" rx="10" fill="#201138" stroke="#A855F7" stroke-width="1" stroke-opacity="0.8"/>
+      <circle cx="12" cy="10" r="3.5" fill="#C084FC" class="pulse-dot"/>
+      <text x="22" y="13.5" font-family="'SF Mono', monospace" font-size="9" font-weight="800" fill="#E9D5FF" letter-spacing="0.8">CULTURAL AUDIO EXPERIENCE</text>
+    </g>
+
+    <!-- Description -->
+    <text x="74" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500" fill="#CBD5E1">
+      Sakala Ra Dhupa &#x2014; Nostalgic 1990s Sunday morning Odia devotional web cultural experience.
+    </text>
+
+    <!-- Tech Stack Pills (Bottom Left) -->
+    <g transform="translate(74, 72)">
+      <!-- Pill 1: JavaScript -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="82" height="22" rx="5" fill="url(#pill-bg)" stroke="#F59E0B" stroke-width="0.8" stroke-opacity="0.8"/>
+        <text x="41" y="14.5" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#FCD34D">JavaScript</text>
+      </g>
+      <!-- Pill 2: HTML5/CSS3 -->
+      <g transform="translate(90, 0)">
+        <rect x="0" y="0" width="94" height="22" rx="5" fill="url(#pill-bg)" stroke="#FF354F" stroke-width="0.8" stroke-opacity="0.8"/>
+        <text x="47" y="14.5" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#FDA4AF">HTML5/CSS3</text>
+      </g>
+      <!-- Pill 3: Web Audio -->
+      <g transform="translate(192, 0)">
+        <rect x="0" y="0" width="88" height="22" rx="5" fill="url(#pill-bg)" stroke="#A855F7" stroke-width="0.8" stroke-opacity="0.8"/>
+        <text x="44" y="14.5" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#E9D5FF">Web Audio</text>
+      </g>
+    </g>
+
+    <!-- Action Button (Bottom Right) -->
+    <g transform="translate(712, 36)">
+      <a href="https://github.com/drkkanhacreation/sakala-bhajana" target="_blank">
+        <rect x="0" y="0" width="144" height="36" rx="8" fill="url(#btn-purple)" stroke="#C084FC" stroke-width="1.2"/>
+        <text x="72" y="22" text-anchor="middle" font-family="'SF Mono', monospace" font-size="11" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">
+          INSPECT CODE &#x2197;
+        </text>
+      </a>
+    </g>
+  </g>
+
+  <!-- ================= CARD 3: CODING-SAMURAI-INTERNSHIP-TASK (y=348) ================= -->
+  <g transform="translate(42, 348)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="876" height="110" rx="12" fill="url(#card-inner-bg-3)"/>
+    <rect x="0" y="0" width="876" height="110" rx="12" fill="none" stroke="#F59E0B" stroke-width="1.2" stroke-opacity="0.6"/>
+
+    <!-- Left Amber Accent Indicator Bar -->
+    <path d="M0 12 C0 5.37 5.37 0 12 0 L12 110 C5.37 110 0 104.63 0 98 Z" fill="#F59E0B"/>
+
+    <!-- Icon: Mobile / Code terminal (x=26, y=26) -->
+    <g transform="translate(26, 26)">
+      <circle cx="16" cy="16" r="20" fill="#081428" stroke="#F59E0B" stroke-width="1" stroke-opacity="0.8"/>
+      <!-- Android/Terminal glyph -->
+      <rect x="9" y="8" width="14" height="16" rx="2" fill="none" stroke="#F59E0B" stroke-width="1.3"/>
+      <line x1="12" y1="12" x2="20" y2="12" stroke="#FCD34D" stroke-width="1.2"/>
+      <line x1="12" y1="15" x2="17" y2="15" stroke="#FCD34D" stroke-width="1.2"/>
+      <circle cx="16" cy="21" r="1" fill="#F59E0B"/>
+    </g>
+
+    <!-- Project Title & Subtitle -->
+    <text x="74" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14.5" font-weight="800" fill="#F4F6FC" letter-spacing="0.4">
+      CODING-SAMURAI-INTERNSHIP-TASK
+    </text>
+    
+    <!-- Status Badge (Android & Full-Stack) -->
+    <g transform="translate(396, 17)">
+      <rect x="0" y="0" width="158" height="20" rx="10" fill="#2E1C06" stroke="#F59E0B" stroke-width="1" stroke-opacity="0.8"/>
+      <circle cx="12" cy="10" r="3.5" fill="#F59E0B" class="pulse-dot"/>
+      <text x="22" y="13.5" font-family="'SF Mono', monospace" font-size="9" font-weight="800" fill="#FCD34D" letter-spacing="0.8">ANDROID &amp; REST APIS</text>
+    </g>
+
+    <!-- Description -->
+    <text x="74" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500" fill="#CBD5E1">
+      Android &amp; Web engineering repository featuring real-world tasks and modern implementations.
+    </text>
+
+    <!-- Tech Stack Pills (Bottom Left) -->
+    <g transform="translate(74, 72)">
+      <!-- Pill 1: JavaScript -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="82" height="22" rx="5" fill="url(#pill-bg)" stroke="#F59E0B" stroke-width="0.8" stroke-opacity="0.8"/>
+        <text x="41" y="14.5" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#FCD34D">JavaScript</text>
+      </g>
+      <!-- Pill 2: Android -->
+      <g transform="translate(90, 0)">
+        <rect x="0" y="0" width="70" height="22" rx="5" fill="url(#pill-bg)" stroke="#10B981" stroke-width="0.8" stroke-opacity="0.8"/>
+        <text x="35" y="14.5" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#6EE7B7">Android</text>
+      </g>
+      <!-- Pill 3: REST APIs -->
+      <g transform="translate(168, 0)">
+        <rect x="0" y="0" width="78" height="22" rx="5" fill="url(#pill-bg)" stroke="#38BDF8" stroke-width="0.8" stroke-opacity="0.8"/>
+        <text x="39" y="14.5" text-anchor="middle" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#38BDF8">REST APIs</text>
+      </g>
+    </g>
+
+    <!-- Action Button (Bottom Right) -->
+    <g transform="translate(712, 36)">
+      <a href="https://github.com/drkkanhacreation/CODING-SAMURAI-INTERNSHIP-TASK" target="_blank">
+        <rect x="0" y="0" width="144" height="36" rx="8" fill="url(#btn-amber)" stroke="#F59E0B" stroke-width="1.2"/>
+        <text x="72" y="22" text-anchor="middle" font-family="'SF Mono', monospace" font-size="11" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">
+          INSPECT CODE &#x2197;
+        </text>
+      </a>
+    </g>
+  </g>
+
+  <!-- ================= BOTTOM TELEMETRY BAR (y=472) ================= -->
+  <g transform="translate(45, 474)">
+    <circle cx="6" cy="6" r="3" fill="#38BDF8" class="pulse-dot"/>
+    <text x="16" y="9.5" font-family="'SF Mono', monospace" font-size="9.5" font-weight="700" fill="#64748B" letter-spacing="0.8">
+      STATUS: ALL REPOSITORIES PUBLIC &amp; SYNCED &#x2022; ARCHITECTURE: SCALABLE &amp; MODULAR &#x2022; GITHUB: @drkkanhacreation
+    </text>
+    <text x="870" y="9.5" text-anchor="end" font-family="'SF Mono', monospace" font-size="9.5" font-weight="800" fill="#38BDF8" letter-spacing="0.5">
+      3 DEPLOYED TIERS
+    </text>
+  </g>
+
+</svg>

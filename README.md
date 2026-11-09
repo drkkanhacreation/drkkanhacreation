@@ -17,17 +17,21 @@
 
 ![Digital ID](./assets/id-dashboard.svg?v=23)
 
-</div>
+![Featured Engineering & Repositories](./assets/projects.svg?v=26)
 
-### 🚀 Featured Engineering & Full-Stack Projects
-
-| Project | Description | Core Stack | Repository / Demo |
-| :--- | :--- | :--- | :--- |
-| **portfolio3d** | Interactive 3D Developer Portfolio web experience featuring immersive three-dimensional spatial design. | `JavaScript` `Three.js` `WebGL` | [Inspect Code](https://github.com/drkkanhacreation/portfolio3d) |
-| **sakala-bhajana** | Sakala Ra Dhupa — Nostalgic 1990s Sunday morning Odia devotional web cultural experience. | `JavaScript` `HTML5/CSS3` `Web Audio` | [Inspect Code](https://github.com/drkkanhacreation/sakala-bhajana) |
-| **Coding Samurai Internship Task** | Android & Web engineering repository featuring real-world tasks and modern implementations. | `JavaScript` `Android` `REST APIs` | [Inspect Code](https://github.com/drkkanhacreation/CODING-SAMURAI-INTERNSHIP-TASK) |
-
-<div align="center">
+<p align="center">
+  <a href="https://github.com/drkkanhacreation/portfolio3d" target="_blank">
+    <img src="https://img.shields.io/badge/portfolio3d-Inspect_Code_%E2%86%97-0284C7?style=for-the-badge&amp;logo=three.js&amp;logoColor=white" alt="portfolio3d" />
+  </a>
+  &nbsp;
+  <a href="https://github.com/drkkanhacreation/sakala-bhajana" target="_blank">
+    <img src="https://img.shields.io/badge/sakala--bhajana-Inspect_Code_%E2%86%97-7C3AED?style=for-the-badge&amp;logo=musicbrainz&amp;logoColor=white" alt="sakala-bhajana" />
+  </a>
+  &nbsp;
+  <a href="https://github.com/drkkanhacreation/CODING-SAMURAI-INTERNSHIP-TASK" target="_blank">
+    <img src="https://img.shields.io/badge/Coding_Samurai-Inspect_Code_%E2%86%97-D97706?style=for-the-badge&amp;logo=android&amp;logoColor=white" alt="Coding Samurai" />
+  </a>
+</p>
 
 ![Connect](./assets/connect.svg?v=23)
 
